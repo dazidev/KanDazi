@@ -15,12 +15,12 @@ Aplicación de uso personal con **Next.js 16 / App Router, React, TypeScript, Po
 
 ## Ejecutar
 
-Requiere Node.js **22.14 o superior** y npm. Los ejemplos usan credenciales locales de desarrollo.
+Requiere Node.js **22.14 o superior** y Yarn **1.22.22**. Los ejemplos usan credenciales locales de desarrollo.
 
 ```sh
-npm ci
+yarn install --frozen-lockfile
 cp -n .env.example .env
-npm run db:generate
+yarn db:generate
 ```
 
 Inicia PostgreSQL con **una** de estas opciones:
@@ -28,7 +28,7 @@ Inicia PostgreSQL con **una** de estas opciones:
 ```sh
 # Opción A: PostgreSQL local incluido, sin Docker.
 # Mantener esta terminal abierta. Datos persistentes en .data/postgres.
-npm run db:local
+yarn db:local
 ```
 
 ```sh
@@ -43,9 +43,9 @@ Para usar Neon PostgreSQL 15, configura su cadena de conexión en `DATABASE_URL`
 En otra terminal, desde la carpeta del proyecto:
 
 ```sh
-npm run db:migrate
-npm run db:seed
-npm run dev
+yarn db:migrate
+yarn db:seed
+yarn dev
 ```
 
 Abrir [http://127.0.0.1:3000](http://127.0.0.1:3000). El seed crea un tablero con tarjetas ilustrativas solamente si la base está vacía. Las tarjetas de ejemplo no representan información real de tu tesis.
@@ -53,8 +53,8 @@ Abrir [http://127.0.0.1:3000](http://127.0.0.1:3000). El seed crea un tablero co
 Para compilar y ejecutar la versión de producción local:
 
 ```sh
-npm run build
-npm start
+yarn build
+yarn start
 ```
 
 ## Estructura
@@ -84,10 +84,10 @@ scripts/
 ## Comprobaciones
 
 ```sh
-npm run typecheck
-npm test
+yarn typecheck
+yarn test
 # Con la aplicación y su base de datos funcionando:
-TEST_BASE_URL=http://127.0.0.1:3000 npm test
+TEST_BASE_URL=http://127.0.0.1:3000 yarn test
 ```
 
 La prueba de integración crea un tablero temporal, comprueba creación, persistencia de coordenadas, edición de columnas, rechazo de datos inválidos y conflictos de revisión, y lo elimina al terminar. Sin `TEST_BASE_URL`, se omite esa prueba y se ejecutan las pruebas de geometría y validación.

@@ -36,5 +36,6 @@
     "tsx": "^4.20.6",
     "embedded-postgres": "18.4.0-beta.17"
   },
-  "type": "module"
+  "type": "module",
+  "packageManager": "yarn@1.22.22"
 }

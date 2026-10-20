@@ -1,0 +1,16 @@
+import EmbeddedPostgres from 'embedded-postgres';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+const databaseDir = path.resolve('.data/postgres');
+const pg = new EmbeddedPostgres({ databaseDir, user: 'kanban', password: 'kanban_local', port: 55432, persistent: true, postgresFlags: ['-h', '127.0.0.1'] });
+if (!existsSync(path.join(databaseDir, 'PG_VERSION'))) await pg.initialise();
+await pg.start();
+const client = pg.getPgClient();
+await client.connect();
+const { rows } = await client.query("SELECT 1 FROM pg_database WHERE datname = 'kanban'");
+await client.end();
+if (!rows.length) await pg.createDatabase('kanban');
+console.log('PostgreSQL disponible en 127.0.0.1:55432. Ctrl+C para detener.');
+let stopping = false;
+for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, async () => { if (stopping) return; stopping = true; await pg.stop(); process.exit(0); });
+setInterval(() => {}, 60000);

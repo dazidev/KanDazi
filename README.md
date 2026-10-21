@@ -5,6 +5,7 @@ Aplicación de uso personal con **Next.js 16 / App Router, React, TypeScript, Po
 ## Incluye
 
 - Varios tableros independientes con iteración, módulo(s) en el objetivo y fechas de inicio y fin. Plantilla con Pendiente, En desarrollo, Completada, Validada, Pruebas y Finalizada, o creación desde una columna vacía.
+- Eliminación de tableros desde la papelera en la lista lateral, con confirmación del nombre y de las columnas y tarjetas que se eliminarán.
 - Columnas con nombre, ocho colores iniciales y selector de color personalizado. Se pueden reordenar y eliminar. Al eliminar una columna se conservan las tarjetas.
 - Tarjetas rectangulares con nombre, descripción y tres prioridades: baja (verde), media (amarillo) y alta (coral). El texto de prioridad acompaña al color.
 - Arrastre libre horizontal y vertical, incluso entre columnas y entre filas. La posición exacta se persiste; no se fuerza una cuadrícula.

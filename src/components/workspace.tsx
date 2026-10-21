@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, type FormEvent, type PointerE
 import { ArrowDownToLine, ArrowLeft, ArrowRight, Check, ChevronDown, CircleHelp, Columns3, Download, FileImage, FileText, Folder, GripVertical, LayoutDashboard, LoaderCircle, MoreHorizontal, Plus, Search, Settings2, Trash2, X, ZoomIn, ZoomOut } from 'lucide-react';
 import { boardHeight, cardHeight, CARD_WIDTH, clampPosition, COLUMN_WIDTH, columnColors, HEADER_HEIGHT, priorities, type Board, type Card, type Column, type Priority } from '@/lib/board';
 
-type Editor = { kind: 'board'; board?: Board } | { kind: 'column'; column?: Column } | { kind: 'card'; card?: Card; x?: number; y?: number } | { kind: 'delete-board' } | { kind: 'help' } | null;
+type Editor = { kind: 'board'; board?: Board } | { kind: 'column'; column?: Column } | { kind: 'card'; card?: Card; x?: number; y?: number } | { kind: 'delete-board'; boardId: string } | { kind: 'help' } | null;
 type SaveState = 'saved' | 'pending' | 'saving' | 'error';
 async function api<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(url, { ...options, headers: { 'Content-Type': 'application/json', ...options?.headers } });
@@ -38,6 +38,7 @@ export default function Workspace() {
   const saving = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const board = boards.find(b => b.id === activeId);
+  const boardToDelete = editor?.kind === 'delete-board' ? boards.find(b => b.id === editor.boardId) : undefined;
   useEffect(() => { if (board && canvasScroller.current) setZoom(Math.max(0.2, Math.min(1, canvasScroller.current.clientWidth / (board.columns.length * COLUMN_WIDTH)))); }, [board?.id, board?.columns.length]);
 
   const persist = useCallback(async () => {
@@ -110,13 +111,17 @@ export default function Workspace() {
         const card: Card = { id: editor.card?.id ?? crypto.randomUUID(), code: String(values.get('code') ?? '').trim(), name: String(values.get('name')).trim(), description: String(values.get('description') ?? '').trim(), priority: String(values.get('priority')) as Priority, x: editor.card?.x ?? editor.x ?? 16, y: editor.card?.y ?? editor.y ?? 94 };
         update({ ...board, cards: editor.card ? board.cards.map(c => c.id === card.id ? card : c) : [...board.cards, card] });
       }
-      if (editor.kind === 'delete-board' && board) {
+      if (editor.kind === 'delete-board') {
+        const target = boardsRef.current.find(b => b.id === editor.boardId);
+        if (!target) throw new Error('El tablero ya no está disponible.');
         if (timer.current) clearTimeout(timer.current);
         await persist();
         if (dirty.current.size) throw new Error('Guarda o respalda los cambios pendientes antes de eliminar el tablero.');
-        await api(`/api/boards/${board.id}`, { method: 'DELETE' });
-        dirty.current.delete(board.id); revisions.current.delete(board.id);
-        const remaining = boardsRef.current.filter(b => b.id !== board.id); setBoards(remaining); setActiveId(remaining[0]?.id ?? '');
+        await api(`/api/boards/${target.id}`, { method: 'DELETE' });
+        dirty.current.delete(target.id); revisions.current.delete(target.id);
+        const remaining = boardsRef.current.filter(b => b.id !== target.id);
+        setBoards(remaining);
+        if (activeId === target.id) selectBoard(remaining[0]?.id ?? '');
       }
       setEditor(null);
     } catch (e) { setError((e as Error).message); }
@@ -177,7 +182,7 @@ export default function Workspace() {
       <div className="nav-section"><span>ESPACIO PERSONAL</span></div>
       <button className="nav-item nav-active" onClick={() => setSidebar(false)}><LayoutDashboard size={17}/> Mis tableros <span className="nav-count">{boards.length}</span></button>
       <div className="nav-section board-list-heading"><span>TUS TABLEROS</span><button title="Crear tablero" aria-label="Crear tablero" onClick={() => setEditor({ kind: 'board' })}><Plus size={16}/></button></div>
-      <nav className="board-list" aria-label="Tableros">{boards.map(b => <button key={b.id} className={`board-nav ${activeId === b.id ? 'selected' : ''}`} onClick={() => selectBoard(b.id)}><span className="board-nav-dot"/><span>{b.title}</span>{activeId === b.id && <span className="selected-indicator"/>}</button>)}</nav>
+      <nav className="board-list" aria-label="Tableros">{boards.map(b => <div key={b.id} className="board-nav-row"><button className={`board-nav ${activeId === b.id ? 'selected' : ''}`} onClick={() => selectBoard(b.id)}><span className="board-nav-dot"/><span>{b.title}</span>{activeId === b.id && <span className="selected-indicator"/>}</button><button className="delete-board-button" aria-label={`Eliminar tablero ${b.title}`} title={`Eliminar tablero ${b.title}`} onClick={() => { setError(''); setEditor({ kind: 'delete-board', boardId: b.id }); }}><Trash2 size={14}/></button></div>)}</nav>
       <button className="new-board-link" onClick={() => setEditor({ kind: 'board' })}><Plus size={16}/> Nuevo tablero</button>
       <div className="sidebar-bottom"><div className="research-note"><span className="note-icon"><FileText size={18}/></span><strong>Del tablero a tu tesis.</strong><p>Organiza tus ideas y exporta tu proceso en un solo lugar.</p><span>HECHO PARA INVESTIGAR <span>↗</span></span></div><button className="help-link" onClick={() => setEditor({ kind: 'help' })}><CircleHelp size={17}/> Guía rápida <span>↗</span></button><div className="profile"><span className="profile-avatar">MI</span><div><strong>Mi investigación</strong><small>Espacio personal</small></div><span className="online-dot"/></div></div>
     </aside>
@@ -204,9 +209,9 @@ export default function Workspace() {
         {editor.kind === 'board' && <><p className="modal-intro">Dale un espacio propio a cada proyecto de investigación.</p><label className="form-label">Nombre del tablero<input name="title" required maxLength={100} defaultValue={editor.board?.title} placeholder="Ej. Iteración 01" autoFocus/></label><label className="form-label">Iteración<input name="iteration" maxLength={60} defaultValue={editor.board?.iteration} placeholder="Ej. IT-01"/></label><label className="form-label">Objetivo · módulo o módulos<input name="goal" maxLength={500} defaultValue={editor.board?.goal} placeholder="Ej. Gestión de usuarios"/></label><div className="date-fields"><label className="form-label">Fecha de inicio<input name="startDate" type="date" defaultValue={editor.board?.startDate}/></label><label className="form-label">Fecha de fin<input name="endDate" type="date" defaultValue={editor.board?.endDate}/></label></div>{!editor.board && <label className="template-option"><input name="template" type="checkbox" defaultChecked/><span><strong>Usar plantilla Kanban</strong><small>Pendiente, En desarrollo, Completada, Validada, Pruebas y Finalizada.</small></span></label>}</>}
         {editor.kind === 'column' && <><label className="form-label">Nombre de la columna<input name="name" required maxLength={60} defaultValue={editor.column?.name} placeholder="Ej. Revisión bibliográfica" autoFocus/></label><ColorPicker defaultValue={editor.column?.color ?? columnColors[(board?.columns.length ?? 0) % columnColors.length]}/>{editor.column && <div className="column-order"><span>Posición de la columna</span><button type="button" className="button secondary" disabled={editor.column.position === 0} onClick={() => reorderColumn(editor.column!, -1)}><ArrowLeft size={15}/> Izquierda</button><button type="button" className="button secondary" disabled={editor.column.position === (board?.columns.length ?? 0) - 1} onClick={() => reorderColumn(editor.column!, 1)}>Derecha <ArrowRight size={15}/></button></div>}</>}
         {editor.kind === 'card' && <><label className="form-label">Identificador<input name="code" maxLength={40} defaultValue={editor.card?.code} placeholder="Ej. ADM-01"/></label><label className="form-label">Nombre<input name="name" required maxLength={300} defaultValue={editor.card?.name} placeholder="Nombre de la tarea" autoFocus/></label><label className="form-label">Descripción<textarea name="description" maxLength={2000} rows={4} defaultValue={editor.card?.description} placeholder="Describe la tarea y su alcance…"/></label><fieldset className="priority-picker"><legend>Prioridad</legend>{Object.entries(priorities).map(([key, p]) => <label key={key} style={{ '--priority-bg': p.color, '--priority-ink': p.ink } as React.CSSProperties}><input type="radio" name="priority" value={key} defaultChecked={key === (editor.card?.priority ?? 'medium')}/><span><i style={{ background: p.dot }}/>{p.label}</span></label>)}</fieldset><p className="field-hint">Puedes mover la tarjeta libremente después de crearla.</p></>}
-        {editor.kind === 'delete-board' && <p className="modal-intro">Se eliminarán «{board?.title}», sus columnas y todas sus tarjetas. Esta acción no se puede deshacer.</p>}
+        {editor.kind === 'delete-board' && <p className="modal-intro">Se eliminará «{boardToDelete?.title}» con todo su contenido. Columnas: {boardToDelete?.columns.length}. Tarjetas: {boardToDelete?.cards.length}. Esta acción no se puede deshacer.</p>}
         {error && <p className="form-error" role="alert">{error}</p>}
-        <div className="modal-actions"><div>{editor.kind === 'card' && editor.card && <button type="button" className="danger-link" onClick={() => { if (board) update({ ...board, cards: board.cards.filter(c => c.id !== editor.card!.id) }); setEditor(null); }}><Trash2 size={15}/> Eliminar</button>}{editor.kind === 'column' && editor.column && <button type="button" className="danger-link" disabled={board?.columns.length === 1} onClick={() => removeColumn(editor.column!)}><Trash2 size={15}/> Eliminar columna</button>}{editor.kind === 'board' && editor.board && <button type="button" className="danger-link" onClick={() => setEditor({ kind: 'delete-board' })}><Trash2 size={15}/> Eliminar</button>}</div><button className="button secondary" type="button" disabled={busy} onClick={() => setEditor(null)}>Cancelar</button><button className={`button ${editor.kind === 'delete-board' ? 'danger' : 'primary'}`} type="submit" disabled={busy}>{busy && <LoaderCircle size={15} className="spin"/>}{editor.kind === 'delete-board' ? 'Eliminar tablero' : editor.kind === 'board' && !editor.board ? 'Crear tablero' : 'Guardar'}</button></div>
+        <div className="modal-actions"><div>{editor.kind === 'card' && editor.card && <button type="button" className="danger-link" onClick={() => { if (board) update({ ...board, cards: board.cards.filter(c => c.id !== editor.card!.id) }); setEditor(null); }}><Trash2 size={15}/> Eliminar</button>}{editor.kind === 'column' && editor.column && <button type="button" className="danger-link" disabled={board?.columns.length === 1} onClick={() => removeColumn(editor.column!)}><Trash2 size={15}/> Eliminar columna</button>}{editor.kind === 'board' && editor.board && <button type="button" className="danger-link" onClick={() => setEditor({ kind: 'delete-board', boardId: editor.board!.id })}><Trash2 size={15}/> Eliminar</button>}</div><button className="button secondary" type="button" disabled={busy} onClick={() => setEditor(null)}>Cancelar</button><button className={`button ${editor.kind === 'delete-board' ? 'danger' : 'primary'}`} type="submit" disabled={busy}>{busy && <LoaderCircle size={15} className="spin"/>}{editor.kind === 'delete-board' ? 'Eliminar tablero' : editor.kind === 'board' && !editor.board ? 'Crear tablero' : 'Guardar'}</button></div>
         {editor.kind === 'column' && editor.column && <p className="field-hint">Al eliminar una columna se conservan sus tarjetas.</p>}
       </form>}
     </Modal>}

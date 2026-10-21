@@ -11,8 +11,9 @@ model Board {
   id        String   @id @default(uuid())
   title     String
   goal      String   @default("")
-  sprint    String   @default("")
-  deadline  String   @default("")
+  iteration String   @default("")
+  startDate String   @default("")
+  endDate   String   @default("")
   revision  Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -32,7 +33,9 @@ model Column {
 
 model Card {
   id       String @id
-  text     String
+  code     String @default("")
+  name     String
+  description String @default("")
   priority String
   x        Float
   y        Float

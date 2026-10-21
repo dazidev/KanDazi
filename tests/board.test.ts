@@ -15,7 +15,7 @@ test('El movimiento permite ambos ejes y limita las posiciones al lienzo', () =>
 });
 test('El lienzo crece para incluir tarjetas muy abajo y texto largo', () => {
   const board = makeTemplate();
-  board.cards[0] = { ...board.cards[0], y: 4200, text: 'Texto extenso '.repeat(20) };
+  board.cards[0] = { ...board.cards[0], y: 4200, name: 'Nombre extenso', description: 'Texto extenso '.repeat(20) };
   assert.ok(boardHeight(board.cards) > 4500);
 });
 test('La validación rechaza prioridades, coordenadas, colores y UUID repetidos inválidos', () => {
@@ -26,4 +26,19 @@ test('La validación rechaza prioridades, coordenadas, colores y UUID repetidos 
   assert.equal(boardSchema.safeParse({ ...board, columns: board.columns.map(c => ({ ...c, color: 'url(script)' })) }).success, false);
   assert.equal(boardSchema.safeParse({ ...board, cards: [board.cards[0], board.cards[0]] }).success, false);
   assert.equal(boardSchema.safeParse({ ...board, columns: [] }).success, false);
+});
+test('Las fechas de iteración admiten rangos válidos y rechazan fechas inexistentes o invertidas', () => {
+  const board = { ...makeTemplate(false), iteration: 'IT-01', startDate: '2026-01-19', endDate: '2026-01-25' };
+  assert.equal(boardSchema.safeParse(board).success, true);
+  assert.equal(boardSchema.safeParse({ ...board, startDate: '2026-02-30' }).success, false);
+  assert.equal(boardSchema.safeParse({ ...board, endDate: '2026-01-18' }).success, false);
+  assert.equal(boardSchema.safeParse({ ...board, startDate: '' }).success, true);
+});
+test('Nombre y descripción se validan por separado y ambos determinan la altura del lienzo', () => {
+  const board = makeTemplate();
+  const card = { ...board.cards[0], name: 'Consultar expediente', description: 'Detalle de la tarea' };
+  assert.equal(boardSchema.safeParse({ ...board, cards: [card] }).success, true);
+  assert.equal(boardSchema.safeParse({ ...board, cards: [{ ...card, name: ' ' }] }).success, false);
+  assert.equal(boardSchema.safeParse({ ...board, cards: [{ ...card, description: 'x'.repeat(2001) }] }).success, false);
+  assert.ok(boardHeight([{ ...card, y: 600, description: 'Descripción extensa '.repeat(80) }]) > boardHeight([{ ...card, y: 600 }]));
 });

@@ -1,0 +1,1576 @@
+{
+  "source": "kanban_tesis_modulos_corregidos.xlsx",
+  "boards": [
+    {
+      "id": "76ec604d-526f-5061-814d-c1f91ae0e1f0",
+      "data": {
+        "title": "Iteración 01",
+        "iteration": "IT-01",
+        "goal": "Infraestructura del backend",
+        "startDate": "2026-01-19",
+        "endDate": "2026-01-25",
+        "columns": [
+          {
+            "id": "6228c00e-6f5c-5ebe-a178-2b341ffdaeeb",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "058b0651-f175-59c9-b1a5-1f882a866280",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "64d99e7f-2fe1-575f-a5ac-7b65f81192d2",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "e169b558-f7d9-5f92-99b9-25ae5d82a5f2",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "c8d957e1-d806-5387-8004-44c6be4e771f",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "fab6fdad-50f2-57c7-a315-2a22c7aad005",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "b3c7f3fd-13dc-57fa-84ba-cc39064dabb0",
+            "code": "TEC-01",
+            "name": "Inicialización del backend con NestJS",
+            "description": "Estructura inicial con AppModule, arranque del servidor, configuración de TypeScript y herramientas de desarrollo. El corte no incorpora módulos funcionales del sistema.",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "67cec5da-558f-5735-9f59-5285b92beea4",
+      "data": {
+        "title": "Iteración 02",
+        "iteration": "IT-02",
+        "goal": "Registro y autenticación de usuarios; Gestión de usuarios",
+        "startDate": "2026-02-02",
+        "endDate": "2026-02-08",
+        "columns": [
+          {
+            "id": "0776345e-410a-5170-aab9-72f3d102f4b5",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "e01a5c84-ee9d-57fb-862c-81b760215dcc",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "8f9af7c2-9d87-5fcf-929a-7d5d01f5db6c",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "05209e36-5340-57c5-8350-9413f3367e82",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "f8f4c895-87fc-5e73-87c5-016680c5ac2c",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "e1b396e2-ce34-5a71-829c-e67135ab92ca",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "ea00508e-727a-59d3-91a9-39a6f8783629",
+            "code": "TEC-02",
+            "name": "Estructura inicial de módulos de usuarios y autenticación",
+            "description": "Controladores, servicios y DTO iniciales para usuarios, autenticación y administración. Los servicios contienen respuestas de ejemplo; este corte acredita estructura, no operaciones de negocio completas.",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "e64d2511-0182-5ff4-954a-6f10e4dca144",
+            "code": "TEC-03",
+            "name": "Esquema inicial de usuarios y administradores",
+            "description": "Modelos User y Admin en Prisma, configuración de conexión y servicio PostgreSQL en Docker Compose. No acredita todavía el registro ni la gestión administrativa funcional.",
+            "priority": "medium",
+            "x": 536,
+            "y": 396
+          }
+        ]
+      }
+    },
+    {
+      "id": "74e7e830-d6db-5c03-97d8-7f0b85a4df80",
+      "data": {
+        "title": "Iteración 03",
+        "iteration": "IT-03",
+        "goal": "Gestión de usuarios; Registro y autenticación de usuarios",
+        "startDate": "2026-04-13",
+        "endDate": "2026-04-19",
+        "columns": [
+          {
+            "id": "1b23c021-2ceb-5698-84d6-9f0141bf7d13",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "af8bcc5b-b7ad-5fc0-9561-16de4dde1471",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "cf73e885-23f3-5c14-86b4-645e9fa04d17",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "5a1285f1-93f6-5d9d-9fcd-60a91fb5e013",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "1fd71a28-167d-5873-a456-cb7f264cc4b1",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "a81fddb6-9689-5a71-8c94-be4410766351",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "874e03da-cb29-599f-a243-3a5abdbd46c4",
+            "code": "TEC-04",
+            "name": "Integración de Prisma con PostgreSQL",
+            "description": "PrismaModule y PrismaService con adaptador PostgreSQL, migraciones del modelo de usuario, roles y estados. Servicio exportado para su uso por otros módulos.",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "e6a368c0-2618-5e29-a0ec-30170db23a3e",
+            "code": "TEC-05",
+            "name": "Registro y autenticación inicial con JWT",
+            "description": "Endpoints de registro e inicio de sesión, almacenamiento de contraseñas con bcrypt y generación de JWT. Implementación inicial de API; no incluye el flujo posterior de invitaciones ni interfaz web.",
+            "priority": "high",
+            "x": 536,
+            "y": 340
+          },
+          {
+            "id": "c358df60-f6d7-5446-9ae8-ca2da45b215a",
+            "code": "TEC-06",
+            "name": "Protección de rutas por token y rol",
+            "description": "Estrategia Passport JWT, consulta de usuario activo y decoradores y guardas de roles. Las rutas privadas de demostración muestran la integración de estos mecanismos.",
+            "priority": "high",
+            "x": 536,
+            "y": 622
+          }
+        ]
+      }
+    },
+    {
+      "id": "4c14d2d8-4df5-5431-ba4f-cbe08c217100",
+      "data": {
+        "title": "Iteración 04",
+        "iteration": "IT-04",
+        "goal": "Registro y autenticación de usuarios",
+        "startDate": "2026-04-20",
+        "endDate": "2026-04-26",
+        "columns": [
+          {
+            "id": "91eb519b-0b4a-52ad-82c2-3fb8dade4c98",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "63991f5d-09cf-5514-bad7-23539d35116b",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "33e148d8-28f4-5ec8-9513-902564cae0fd",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "d99d2615-6403-5c84-8d79-c61a8b93c95a",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "bddeb717-726c-5a9c-b91b-73ba41e16ea0",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "7b589082-c404-54a1-9b7f-95c18fb8cd53",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "e597c78e-2748-5987-a1c5-cfbea312f855",
+            "code": "ADM-01",
+            "name": "Autenticación web con credenciales",
+            "description": "Código web + API; no se registra validación formal",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "52d2b985-54a9-528e-a70e-cb4edbd18e1d",
+            "code": "ADM-02",
+            "name": "Renovación y cierre de sesión web",
+            "description": "JWT/refresh/logout; verificar mediante casos de prueba futuros",
+            "priority": "high",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "b09117eb-c71e-51c4-91c9-ea2bba0ea4a2",
+            "code": "ADM-04",
+            "name": "Generación de invitaciones a usuarios",
+            "description": "Incluye emisión y consulta de invitación",
+            "priority": "high",
+            "x": 536,
+            "y": 460
+          }
+        ]
+      }
+    },
+    {
+      "id": "98ff858b-fb5e-5a09-aa0d-1bca74ab01dd",
+      "data": {
+        "title": "Iteración 05",
+        "iteration": "IT-05",
+        "goal": "Registro y autenticación de usuarios",
+        "startDate": "2026-05-04",
+        "endDate": "2026-05-10",
+        "columns": [
+          {
+            "id": "72f4dcb3-876b-560a-a75b-50431ac5784d",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "8138a73a-b18f-59f7-929a-016a66eb92ce",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "24827244-ff23-5925-bd35-d76f3369e208",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "8dfb2d64-cdfc-5b8e-904d-bc5e000357eb",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "d6989aa7-be71-5bf9-a26c-11a41df2bfeb",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "5ee4a8c5-166e-5174-98d5-52ca474997cf",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "779b7a14-61fb-5eb4-aebb-62eac45548eb",
+            "code": "ADM-01",
+            "name": "Autenticación web con credenciales",
+            "description": "Código web + API; no se registra validación formal",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "aa749dde-2dd3-544d-aa15-1162fe506cec",
+      "data": {
+        "title": "Iteración 06",
+        "iteration": "IT-06",
+        "goal": "Registro y autenticación de usuarios",
+        "startDate": "2026-05-25",
+        "endDate": "2026-05-31",
+        "columns": [
+          {
+            "id": "bcc1d003-36eb-5ce5-810f-438e39b0b42e",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "abd154f8-ce37-595c-8e75-397c9242a04f",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "a014122e-ccf0-535f-9d0c-aedc648ac30d",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "8b1c0833-7fd8-5634-b23c-d901a08a644d",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "acee3a78-29c8-525a-9dd5-79ed1ffeb13d",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "dc9f62be-6eb6-5677-b005-9b3a877c00ed",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "f6aaed21-ca37-5654-8e25-b22d2750ac16",
+            "code": "ADM-03",
+            "name": "Acceso al área privada del panel",
+            "description": "Interfaz administrativa protegida",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "5fc063c2-d703-54a3-bbf4-5a1ef2612ebd",
+            "code": "ADM-02",
+            "name": "Renovación y cierre de sesión web",
+            "description": "JWT/refresh/logout; verificar mediante casos de prueba futuros",
+            "priority": "high",
+            "x": 536,
+            "y": 268
+          }
+        ]
+      }
+    },
+    {
+      "id": "dac94680-0d06-5306-b046-7c1094bcf310",
+      "data": {
+        "title": "Iteración 07",
+        "iteration": "IT-07",
+        "goal": "Gestión de usuarios",
+        "startDate": "2026-06-08",
+        "endDate": "2026-06-14",
+        "columns": [
+          {
+            "id": "a8b6750f-ee05-5951-b1d1-af7b93c07a92",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "dfccf549-5361-5611-9d5b-02de62befac9",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "03a95d16-8a38-5482-98a4-451255506a7c",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "200fbe31-d134-5cce-9db7-41a9d9a299f1",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "50eaac84-7c9b-5fb1-b5b6-ce2b2fcf5529",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "3afc445a-038e-5e9f-9cd7-3146899814ff",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "420d64d1-dc35-5416-b05e-99bae4643131",
+            "code": "ADM-06",
+            "name": "Listado de usuarios en panel administrativo",
+            "description": "Consulta API + presentación en tabla",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "57e1e434-e806-5bb2-aaa1-f0dc61632345",
+      "data": {
+        "title": "Iteración 08",
+        "iteration": "IT-08",
+        "goal": "Registro y autenticación de usuarios",
+        "startDate": "2026-06-15",
+        "endDate": "2026-06-21",
+        "columns": [
+          {
+            "id": "e08621ac-7c4e-5c8b-bad9-da490a6e3f94",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "8d74553d-67ad-5f6d-8fe2-dee662f1c968",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "3a027f17-9952-590b-be10-3a842aaf63ca",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "4d61e3b7-9aed-5670-b654-98c394a8b8ad",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "daedb48a-e375-547b-b3a3-e9d0190d2a56",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "461cee05-a052-540a-aeb7-f8e78240c71c",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "55fea2f7-6966-5d01-b09c-a90fbcee2010",
+            "code": "ADM-05",
+            "name": "Registro mediante invitación",
+            "description": "No implica haber implementado el flujo específico de todos los roles",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "3534b71f-e82e-5828-b921-52523f0f3413",
+            "code": "ADM-04",
+            "name": "Generación de invitaciones a usuarios",
+            "description": "Incluye emisión y consulta de invitación",
+            "priority": "high",
+            "x": 536,
+            "y": 286
+          }
+        ]
+      }
+    },
+    {
+      "id": "edab0146-82b2-5d65-a282-b945ae31e918",
+      "data": {
+        "title": "Iteración 09",
+        "iteration": "IT-09",
+        "goal": "Gestión de usuarios",
+        "startDate": "2026-07-06",
+        "endDate": "2026-07-12",
+        "columns": [
+          {
+            "id": "310e5a90-ae33-51d3-91b3-c6931512455c",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "5d869b2c-15cc-5f24-a55f-8ae95809bcb4",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "b9a61c74-db3b-57a6-af2c-53fae2018a04",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "41240622-ee63-5b9c-b2f6-c4f6499da564",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "e24380cc-7cdb-5054-9236-67b7def3fa7c",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "b5e52991-cd4b-5327-ae43-f468dd2796b4",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "b6baf65d-1026-569b-a056-2197d4f20454",
+            "code": "ADM-08",
+            "name": "Desactivación administrativa con registro",
+            "description": "Desactivación; no implica eliminación física",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "0a269f74-d658-5a7b-b3f9-b58badf4a9e4",
+            "code": "SUP-01",
+            "name": "Modelo y módulo de bitácora de eventos",
+            "description": "Componente transversal de auditoría; vinculado aquí con Gestión de usuarios por su introducción en la fase administrativa. No figura como módulo independiente en la figura 5.1.",
+            "priority": "medium",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "8ca3d444-8db0-564a-a858-6474a4c76203",
+            "code": "SUP-02",
+            "name": "Registro de desactivación administrativa de usuarios",
+            "description": "Registro del actor/acción/justificación",
+            "priority": "medium",
+            "x": 536,
+            "y": 532
+          }
+        ]
+      }
+    },
+    {
+      "id": "cf94cfff-01d3-5783-a7f6-816ca0aa672b",
+      "data": {
+        "title": "Iteración 10",
+        "iteration": "IT-10",
+        "goal": "Gestión de procesos y etapas; Gestión de subetapas",
+        "startDate": "2026-07-20",
+        "endDate": "2026-07-26",
+        "columns": [
+          {
+            "id": "07a2756e-c62f-5277-82aa-9aef2157f313",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "fcf1c3f8-e95c-53aa-a729-9045c6a539e9",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "f183620b-43b3-5529-92a3-4c1292fc46a8",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "32fcdd64-2b8d-5457-b6bd-778a18d8d17a",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "4a4ef698-a5d0-54ce-9b8c-295d23baaca8",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "e91c5950-d4cd-52b4-9e80-7538a760718d",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "83467e61-11cd-58de-9f81-c7f4cb89e102",
+            "code": "TEC-07",
+            "name": "Modelado del expediente sucesorio",
+            "description": "Modelos Process y Defendant, tipos de sucesión, estados del expediente y relaciones con solicitantes, responsable y creador. El corte incorpora el esquema, no el CRUD posterior.",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "1e75e261-5ff5-592e-9f4d-58dc72f88394",
+            "code": "TEC-08",
+            "name": "Modelado de etapas y subetapas jerárquicas",
+            "description": "Modelos ProcessStage y ProcessSubstage con nombre, descripción, estado, relación con el expediente y jerarquía padre-hija de subetapas. No acredita todavía su creación o consulta mediante API.",
+            "priority": "medium",
+            "x": 536,
+            "y": 358
+          }
+        ]
+      }
+    },
+    {
+      "id": "a7bf2c3c-e6a6-5219-b6f8-594b59197c3b",
+      "data": {
+        "title": "Iteración 11",
+        "iteration": "IT-11",
+        "goal": "Gestión de procesos y etapas",
+        "startDate": "2026-07-27",
+        "endDate": "2026-08-02",
+        "columns": [
+          {
+            "id": "b88c6f21-db70-5467-bb4e-1e8d88730ad8",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "8eab4cf9-8cb1-5353-bf92-4e820b2701ed",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "f227a91c-2e86-5925-9dff-b8f32ff9eb7e",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "3409efaa-051f-5ce5-a38d-2eb1db67ce19",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "dce59af2-4057-57ef-b839-cf56a7e9f209",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "117d4d06-291e-50f2-8c2d-866297d1c135",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "aabd6e20-8d33-5ddf-9d0d-b0f450728dfc",
+            "code": "PRO-01",
+            "name": "Creación de expediente sucesorio",
+            "description": "Tipos testamentario, intestamentario y mixto",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "dd521382-7324-5b6a-b343-8d052fde42a3",
+            "code": "PRO-02",
+            "name": "Listado administrativo de expedientes",
+            "description": "Consulta sin filtro de propietario: aplicación del panel administrativo",
+            "priority": "medium",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "400a5c65-7f71-57ca-bfd2-0d54b05e039e",
+            "code": "PRO-04",
+            "name": "Desactivación de expediente",
+            "description": "Registra acción administrativa",
+            "priority": "medium",
+            "x": 536,
+            "y": 460
+          }
+        ]
+      }
+    },
+    {
+      "id": "c816f16a-3391-5973-90c4-9fdafb9e1173",
+      "data": {
+        "title": "Iteración 12",
+        "iteration": "IT-12",
+        "goal": "Gestión de usuarios; Gestión de procesos y etapas",
+        "startDate": "2026-08-03",
+        "endDate": "2026-08-09",
+        "columns": [
+          {
+            "id": "6d992ebf-3506-5375-b26c-c24bb0d66aa8",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "18daa462-f2a5-5285-97fb-e6900e99762e",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "05ab8f3f-b813-5907-bbc0-182b38cf6fdd",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "b476ff97-7a05-504d-a0ad-8221d5ee01cd",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "79c88642-5d0f-5b3c-867c-52c515e06d7a",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "8bd3a557-b07a-57ad-8cee-cd12f8815b64",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "a112a9bb-88fa-54be-945c-d53bd43f9749",
+            "code": "ADM-07",
+            "name": "Búsqueda/consulta de usuarios por rol",
+            "description": "Utilizado al seleccionar usuarios disponibles",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "20dad2f9-b293-55dc-b6e6-bd2d1f325a61",
+            "code": "PRO-03",
+            "name": "Consulta individual de expediente",
+            "description": "Datos principales + etapas",
+            "priority": "high",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "d7e83091-4182-54db-af59-01ff4aa97870",
+            "code": "PRO-05",
+            "name": "Inicialización con las etapas base",
+            "description": "El código genera cinco etapas base agrupadas",
+            "priority": "high",
+            "x": 536,
+            "y": 424
+          },
+          {
+            "id": "02979dd5-d913-5c18-9577-45d116bd9d46",
+            "code": "PRO-06",
+            "name": "Selección de abogado responsable al crear expediente",
+            "description": "No acredita reasignación posterior del abogado",
+            "priority": "high",
+            "x": 536,
+            "y": 598
+          },
+          {
+            "id": "b470290e-1956-54df-be29-960186e5da19",
+            "code": "PRO-07",
+            "name": "Vista principal y mapa del expediente",
+            "description": "Consulta + visualización del proceso en panel",
+            "priority": "high",
+            "x": 536,
+            "y": 792
+          },
+          {
+            "id": "5f43ba6a-94b7-506e-be81-61e82b681777",
+            "code": "SUP-03",
+            "name": "Registro de acciones sobre expedientes",
+            "description": "Bitácora asociada a altas y cambios en procesos",
+            "priority": "medium",
+            "x": 536,
+            "y": 966
+          },
+          {
+            "id": "e3e2e151-ded0-5ae4-9dba-0b743daabdfe",
+            "code": "PRO-01",
+            "name": "Creación de expediente sucesorio",
+            "description": "Tipos testamentario, intestamentario y mixto",
+            "priority": "high",
+            "x": 536,
+            "y": 1140
+          },
+          {
+            "id": "0d36f59d-40bb-5286-9ec0-85239d7f6c5b",
+            "code": "SUP-01",
+            "name": "Modelo y módulo de bitácora de eventos",
+            "description": "Componente transversal de auditoría; vinculado aquí con Gestión de usuarios por su introducción en la fase administrativa. No figura como módulo independiente en la figura 5.1.",
+            "priority": "medium",
+            "x": 536,
+            "y": 1314
+          }
+        ]
+      }
+    },
+    {
+      "id": "dd6cd2a3-90c1-57a6-b8b2-a754b9d9d3b1",
+      "data": {
+        "title": "Iteración 13",
+        "iteration": "IT-13",
+        "goal": "Gestión de procesos y etapas",
+        "startDate": "2026-08-10",
+        "endDate": "2026-08-16",
+        "columns": [
+          {
+            "id": "56e3cbae-16b5-51cd-ae12-cf41b26dee7c",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "cd05b9ba-b7df-51b5-8352-34acae425d84",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "83bd59d9-29c3-5a8f-b46f-7b450325f315",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "01be7f94-a118-5786-8df2-80a34429146c",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "18ccdf6a-7fbf-505b-885b-6bb3897dd668",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "1276d63b-11a7-5ee9-829f-9dfb5702c5c0",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "6a100844-2c3c-5e75-b3af-4f5a6dc0bf74",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "12ea3eb6-a43a-5f1b-b99c-219c2961772e",
+      "data": {
+        "title": "Iteración 14",
+        "iteration": "IT-14",
+        "goal": "Gestión de subetapas",
+        "startDate": "2026-08-17",
+        "endDate": "2026-08-23",
+        "columns": [
+          {
+            "id": "ad696890-73a8-5dff-aeff-ea580087b57d",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "f91b282c-f32f-5583-a3c1-405a7470fb65",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "c5dc6287-d9a9-5b21-aff7-a11e5634ddc4",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "7d89054f-3696-59b6-b337-2f765f3ef0ba",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "4d8bc6c1-f3d3-5ab7-b7b3-15bdc1a3e575",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "7c947513-a2a2-5427-ab0e-25278e820cd2",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "5305ccbe-5b66-5d91-aa12-0e7a06927d09",
+            "code": "EST-02",
+            "name": "Creación de subetapa en una etapa",
+            "description": "Entidad y alta de subetapa",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "84c25a05-cc72-5597-85e3-32c7fca55b44",
+            "code": "EST-03",
+            "name": "Creación de subetapas hijas anidadas",
+            "description": "Relación parentSubstageId; profundidad variable",
+            "priority": "high",
+            "x": 536,
+            "y": 250
+          }
+        ]
+      }
+    },
+    {
+      "id": "248be15c-787d-52ff-a32d-9217b03899d8",
+      "data": {
+        "title": "Iteración 15",
+        "iteration": "IT-15",
+        "goal": "Gestión de procesos y etapas; Gestión de subetapas",
+        "startDate": "2026-08-24",
+        "endDate": "2026-08-30",
+        "columns": [
+          {
+            "id": "ebc4b639-b68a-5106-b340-1eb849bc61c6",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "fcfb4b44-ea3a-5c42-bc7a-544d59d0d35f",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "1d2ccac3-bd21-5b34-b21e-a10d1f5675d7",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "9c7522df-12b1-5fc5-b996-8cedd8007ba4",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "f95d026f-ecf3-5f1d-b953-bcb56eba6984",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "c954848c-582f-553c-911d-e27e44aa2cea",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "d31230e2-f04e-5b04-b055-5889a78a21fb",
+            "code": "EST-01",
+            "name": "Creación de etapa intermedia",
+            "description": "Estructura interna; acción disponible en panel",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "a98fd14b-d4a2-57e9-aff8-d205684ca1dc",
+            "code": "EST-04",
+            "name": "Construcción del árbol jerárquico de subetapas",
+            "description": "Representación anidada a partir de la API",
+            "priority": "high",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "085303c6-c8ea-5a85-ab73-01ae3010fd1f",
+            "code": "EST-05",
+            "name": "Visualización del mapa de etapas",
+            "description": "Mapa visual del proceso",
+            "priority": "high",
+            "x": 536,
+            "y": 462
+          },
+          {
+            "id": "af7c7b1c-7129-5973-97bc-83c8b36725e5",
+            "code": "EST-08",
+            "name": "Desactivación de etapa intermedia",
+            "description": "Ruta de desactivación; diseño UI específico a verificar",
+            "priority": "medium",
+            "x": 536,
+            "y": 618
+          },
+          {
+            "id": "d1b140d8-8fcb-5901-9067-b7ac6c1e7e40",
+            "code": "EST-09",
+            "name": "Desactivación de subetapa",
+            "description": "Respeta condiciones del árbol y registros",
+            "priority": "high",
+            "x": 536,
+            "y": 792
+          },
+          {
+            "id": "ce18f763-45ae-5d55-8628-12218620c550",
+            "code": "SUP-04",
+            "name": "Registro de creación de etapas y subetapas",
+            "description": "Integración de logs en operaciones",
+            "priority": "medium",
+            "x": 536,
+            "y": 966
+          },
+          {
+            "id": "71de7187-c268-52f5-8eea-a8a8f50a363a",
+            "code": "PRO-07",
+            "name": "Vista principal y mapa del expediente",
+            "description": "Consulta + visualización del proceso en panel",
+            "priority": "high",
+            "x": 536,
+            "y": 1140
+          },
+          {
+            "id": "4a7be79e-dd69-5e01-9164-028b19dd5b2c",
+            "code": "EST-02",
+            "name": "Creación de subetapa en una etapa",
+            "description": "Entidad y alta de subetapa",
+            "priority": "high",
+            "x": 536,
+            "y": 1314
+          },
+          {
+            "id": "36f8c789-51b7-5131-8dfe-a63a94c1ec5b",
+            "code": "EST-03",
+            "name": "Creación de subetapas hijas anidadas",
+            "description": "Relación parentSubstageId; profundidad variable",
+            "priority": "high",
+            "x": 536,
+            "y": 1470
+          }
+        ]
+      }
+    },
+    {
+      "id": "bc603d81-147a-58d9-a7b0-e9c8f65efb3f",
+      "data": {
+        "title": "Iteración 16",
+        "iteration": "IT-16",
+        "goal": "Gestión de procesos y etapas; Gestión de subetapas; Gestión de carpeta digital",
+        "startDate": "2026-09-07",
+        "endDate": "2026-09-13",
+        "columns": [
+          {
+            "id": "a486f8a1-7218-57ba-87a6-c9770451b523",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "4b51d4b9-220a-5ff6-bbcc-346e6da5ad0d",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "977ccf8f-c7e6-58eb-9f1f-0cbd7e57a547",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "8a97c88d-214c-5265-be01-810a0b3869cf",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "b8272ec4-433e-5ac2-ac12-f00b87cedaea",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "127a0548-9336-5f2f-b397-a480c2fe578b",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "60fce2c6-9875-5b78-938d-bf91d6310041",
+            "code": "EST-06",
+            "name": "Consulta de detalle de etapa",
+            "description": "Consulta asociada a carpetas y tareas",
+            "priority": "high",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "25749c2c-4774-5636-a31d-f17f40329dde",
+            "code": "EST-07",
+            "name": "Consulta de detalle de subetapa",
+            "description": "Vista individual de subetapa",
+            "priority": "high",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "3a0035d4-245f-5058-af90-564a85240785",
+            "code": "DOC-05",
+            "name": "Modelo y almacenamiento de archivos PDF",
+            "description": "Almacenamiento seguro gestionado por backend",
+            "priority": "medium",
+            "x": 536,
+            "y": 424
+          }
+        ]
+      }
+    },
+    {
+      "id": "6867bbb9-6d3e-5177-8058-d81b4fa77379",
+      "data": {
+        "title": "Iteración 17",
+        "iteration": "IT-17",
+        "goal": "Gestión de carpeta digital",
+        "startDate": "2026-09-14",
+        "endDate": "2026-09-20",
+        "columns": [
+          {
+            "id": "77a699e1-2673-537e-a39f-59c47768e8d0",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "34dfc5b3-98cb-55e3-9e8d-6c3a51625b7b",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "2f60dfc6-6e7f-575f-806b-5e10c909dfac",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "a62ace81-3cef-5657-a27e-c91ff7c69416",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "33c02919-ae66-5438-a0e9-fbb565c57ac4",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "a4bfc155-b113-5a98-84a3-e4969b1f2ce5",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "4d81129e-415f-5793-9bc8-138aa1222e17",
+            "code": "DOC-01",
+            "name": "Creación de carpeta digital",
+            "description": "Carpetas dentro de etapas/subetapas",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "afd15a1b-bc80-5e15-b1e9-a454bc9c3520",
+            "code": "DOC-02",
+            "name": "Consulta y navegación de carpetas",
+            "description": "Acceso a contenido digital",
+            "priority": "medium",
+            "x": 536,
+            "y": 268
+          },
+          {
+            "id": "9e519d73-8065-5ca9-8538-842593ceff5d",
+            "code": "DOC-06",
+            "name": "Carga de documento PDF en carpeta",
+            "description": "Validación de tipo application/pdf en API",
+            "priority": "medium",
+            "x": 536,
+            "y": 424
+          },
+          {
+            "id": "de1eb349-f936-56a9-962b-e608b1b0f41e",
+            "code": "DOC-05",
+            "name": "Modelo y almacenamiento de archivos PDF",
+            "description": "Almacenamiento seguro gestionado por backend",
+            "priority": "medium",
+            "x": 536,
+            "y": 598
+          }
+        ]
+      }
+    },
+    {
+      "id": "54d51994-8777-5d53-9c33-726cabbffda1",
+      "data": {
+        "title": "Iteración 18",
+        "iteration": "IT-18",
+        "goal": "Gestión de carpeta digital; Gestión de tareas",
+        "startDate": "2026-09-21",
+        "endDate": "2026-09-27",
+        "columns": [
+          {
+            "id": "e628d93e-dd6c-5007-b554-ebbacd4090f9",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "63efcf57-26c4-5145-8c64-67c66dcf6c0e",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "4bc1bb20-2189-5f0c-bf0f-b3f6cba5f809",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "23dd42e9-b826-5234-b555-c94b9ea16aeb",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "339d8577-2e25-5fb2-b5ea-732c54428c7d",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "978d50e9-f929-58fc-81ad-6648d83e3ee0",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "c15c60a1-e2cf-583c-922b-caf5a27c4c56",
+            "code": "DOC-03",
+            "name": "Actualización de datos de carpeta",
+            "description": "Edición de metadatos",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "a1ac7f1b-f330-5dae-a9f1-790498ce5105",
+            "code": "DOC-04",
+            "name": "Desactivación de carpeta y su contenido",
+            "description": "Incluye lógica asociada a archivos",
+            "priority": "medium",
+            "x": 536,
+            "y": 250
+          },
+          {
+            "id": "9dff7433-2d30-5faf-a023-70983ab677ef",
+            "code": "DOC-07",
+            "name": "Visualización de documento PDF",
+            "description": "Visualización inline; descarga independiente no se acredita",
+            "priority": "medium",
+            "x": 536,
+            "y": 424
+          },
+          {
+            "id": "2c7673ab-c9e1-5a5b-b19e-80cd94fdd335",
+            "code": "DOC-08",
+            "name": "Edición de nombre y descripción del PDF",
+            "description": "Edición de metadatos; no reemplazo de contenido",
+            "priority": "medium",
+            "x": 536,
+            "y": 616
+          },
+          {
+            "id": "3b93356e-8743-5e60-b488-3e7c51fb9fbd",
+            "code": "DOC-09",
+            "name": "Eliminación de archivo PDF",
+            "description": "Operación delete y su interfaz",
+            "priority": "medium",
+            "x": 536,
+            "y": 790
+          },
+          {
+            "id": "3dc6e041-6c67-5bc6-a651-eb875b5a11ab",
+            "code": "DOC-10",
+            "name": "Contenedor web para archivos PDF",
+            "description": "Listado y controles en vista documental",
+            "priority": "medium",
+            "x": 536,
+            "y": 964
+          },
+          {
+            "id": "2f41dc33-04b2-50f3-9371-6da4864b891a",
+            "code": "TAR-01",
+            "name": "Modelo de tareas asociadas a etapa/subetapa",
+            "description": "No equivale a listas automáticas según RF49",
+            "priority": "medium",
+            "x": 536,
+            "y": 1138
+          },
+          {
+            "id": "201bde35-7eb5-59d8-8a96-cc239e6bb238",
+            "code": "TAR-02",
+            "name": "Creación de tarea",
+            "description": "Función técnica presente en módulo administrativo; rol abogado no evaluado",
+            "priority": "medium",
+            "x": 536,
+            "y": 1312
+          },
+          {
+            "id": "72815ff7-3a2d-5078-8487-d8064bf35fd5",
+            "code": "TAR-03",
+            "name": "Consulta y visualización de tareas",
+            "description": "Presentación en detalle de etapa/subetapa",
+            "priority": "medium",
+            "x": 536,
+            "y": 1484
+          },
+          {
+            "id": "91e21753-1cd9-50c4-83e2-1b398c0a6514",
+            "code": "TAR-04",
+            "name": "Edición de tarea",
+            "description": "Disponible como operación técnica",
+            "priority": "medium",
+            "x": 536,
+            "y": 1658
+          },
+          {
+            "id": "30f977a3-a9a9-58b9-a32c-08b5977a1d5b",
+            "code": "TAR-05",
+            "name": "Completar y reabrir tarea",
+            "description": "Soporta cambio de estado",
+            "priority": "medium",
+            "x": 536,
+            "y": 1812
+          },
+          {
+            "id": "4b27566a-cc39-5786-ad39-b6ad9117e889",
+            "code": "TAR-06",
+            "name": "Eliminación lógica de tarea",
+            "description": "Registra deletedAt; no implementa automáticamente RF52 por abogado",
+            "priority": "medium",
+            "x": 536,
+            "y": 1968
+          },
+          {
+            "id": "5324f187-c9d3-59d6-86dc-ff0a9ef92d7d",
+            "code": "DOC-06",
+            "name": "Carga de documento PDF en carpeta",
+            "description": "Validación de tipo application/pdf en API",
+            "priority": "medium",
+            "x": 536,
+            "y": 2160
+          }
+        ]
+      }
+    },
+    {
+      "id": "607977ac-2c29-5ebd-a6de-e1541a9c0265",
+      "data": {
+        "title": "Iteración 19",
+        "iteration": "IT-19",
+        "goal": "Gestión de subetapas; Gestión de procesos y etapas",
+        "startDate": "2026-09-28",
+        "endDate": "2026-10-04",
+        "columns": [
+          {
+            "id": "7839d2b8-2ce2-5a3d-b2c1-cf208e1e2650",
+            "name": "Pendiente",
+            "color": "#DBE8F5",
+            "position": 0
+          },
+          {
+            "id": "37d7aa2a-ee3f-5516-9e63-c80c34d34c52",
+            "name": "En desarrollo",
+            "color": "#F9EDC9",
+            "position": 1
+          },
+          {
+            "id": "90e1d71f-c614-5b8a-8e69-aded76207c61",
+            "name": "Completada",
+            "color": "#F6DED6",
+            "position": 2
+          },
+          {
+            "id": "9335e237-dcec-5f4c-bd66-fe2a9f023839",
+            "name": "Validada",
+            "color": "#E6DFF4",
+            "position": 3
+          },
+          {
+            "id": "11d28b78-2b62-544d-8496-fcb783c9669a",
+            "name": "Pruebas",
+            "color": "#E0EBD9",
+            "position": 4
+          },
+          {
+            "id": "57c2f409-fc4c-5bf0-8a40-2386085449c1",
+            "name": "Finalizada",
+            "color": "#E5E9EC",
+            "position": 5
+          }
+        ],
+        "cards": [
+          {
+            "id": "604bd75d-c7aa-54f3-b097-aef8f2250b91",
+            "code": "EST-11",
+            "name": "Cierre condicionado de subetapa",
+            "description": "Control documental y estado; no equivale a prueba de aceptación",
+            "priority": "medium",
+            "x": 536,
+            "y": 94
+          },
+          {
+            "id": "1b870851-6c32-553b-9453-6fc814359cbf",
+            "code": "EST-12",
+            "name": "Cierre condicionado de etapa",
+            "description": "Valida subetapas abiertas y carpetas sin documento",
+            "priority": "medium",
+            "x": 536,
+            "y": 286
+          },
+          {
+            "id": "973b2141-fd29-5de3-970c-544740c6066f",
+            "code": "EST-13",
+            "name": "Bloqueo de operaciones en etapas/subetapas cerradas",
+            "description": "Restricciones API e interfaz — Vincula también Gestión de subetapas.",
+            "priority": "medium",
+            "x": 536,
+            "y": 460
+          },
+          {
+            "id": "63a72ff2-d769-5956-8562-ffa966aa66bb",
+            "code": "EST-14",
+            "name": "Actualización del árbol tras cambios",
+            "description": "Sincronización visual en panel",
+            "priority": "high",
+            "x": 536,
+            "y": 672
+          },
+          {
+            "id": "aa39f261-fe2f-5787-b8e7-a9962633a269",
+            "code": "SUP-05",
+            "name": "Protección de concurrencia sobre estados de etapa",
+            "description": "Bloqueo transaccional en operaciones concurrentes",
+            "priority": "medium",
+            "x": 536,
+            "y": 846
+          },
+          {
+            "id": "0b352fb6-7599-597e-b7a7-be4303db3622",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 536,
+            "y": 1040
+          }
+        ]
+      }
+    }
+  ]
+}

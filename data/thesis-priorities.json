@@ -1,0 +1,702 @@
+{
+  "source": "Tesis_Daniel_Zipa (4).pdf",
+  "section": "Especificación RF01 (tabla 4.12) y anexo A (RF02–RF30)",
+  "rule": "Máxima prioridad entre especificaciones funcionalmente asociadas; Media provisional cuando no existe prioridad documentada. Los RNF carecen de prioridad explícita.",
+  "requirements": [
+    {
+      "code": "RF01",
+      "name": "Crear usuario",
+      "priority": "Alta",
+      "pdfPage": 67
+    },
+    {
+      "code": "RF02",
+      "name": "Editar usuario",
+      "priority": "Media",
+      "pdfPage": 136
+    },
+    {
+      "code": "RF03",
+      "name": "Eliminar usuario",
+      "priority": "Media",
+      "pdfPage": 137
+    },
+    {
+      "code": "RF04",
+      "name": "Mostrar usuarios",
+      "priority": "Media",
+      "pdfPage": 138
+    },
+    {
+      "code": "RF05",
+      "name": "Generar código de invitación",
+      "priority": "Alta",
+      "pdfPage": 139
+    },
+    {
+      "code": "RF06",
+      "name": "Mostrar códigos de invitación",
+      "priority": "Baja",
+      "pdfPage": 140
+    },
+    {
+      "code": "RF07",
+      "name": "Registrar usuario",
+      "priority": "Alta",
+      "pdfPage": 141
+    },
+    {
+      "code": "RF08",
+      "name": "Autenticar usuario",
+      "priority": "Alta",
+      "pdfPage": 143
+    },
+    {
+      "code": "RF09",
+      "name": "Mostrar solicitudes de registro",
+      "priority": "Alta",
+      "pdfPage": 145
+    },
+    {
+      "code": "RF10",
+      "name": "Aprobar abogado",
+      "priority": "Alta",
+      "pdfPage": 147
+    },
+    {
+      "code": "RF11",
+      "name": "Aprobar cliente del abogado",
+      "priority": "Alta",
+      "pdfPage": 149
+    },
+    {
+      "code": "RF12",
+      "name": "Crear proceso",
+      "priority": "Alta",
+      "pdfPage": 151
+    },
+    {
+      "code": "RF13",
+      "name": "Asignar abogado a proceso por administrador",
+      "priority": "Alta",
+      "pdfPage": 153
+    },
+    {
+      "code": "RF14",
+      "name": "Eliminar abogado de un proceso por ad- ministrador",
+      "priority": "Media",
+      "pdfPage": 155
+    },
+    {
+      "code": "RF15",
+      "name": "Asignar al cliente del abogado a pro- ceso",
+      "priority": "Alta",
+      "pdfPage": 157
+    },
+    {
+      "code": "RF16",
+      "name": "Mostrar procesos a administrador",
+      "priority": "Media",
+      "pdfPage": 159
+    },
+    {
+      "code": "RF17",
+      "name": "Mostrar proceso a abogado",
+      "priority": "Media",
+      "pdfPage": 161
+    },
+    {
+      "code": "RF18",
+      "name": "Mostrar proceso a cliente del abogado",
+      "priority": "Alta",
+      "pdfPage": 163
+    },
+    {
+      "code": "RF19",
+      "name": "Mostrar etapas a administrador",
+      "priority": "Alta",
+      "pdfPage": 165
+    },
+    {
+      "code": "RF20",
+      "name": "Mostrar etapas a abogado",
+      "priority": "Alta",
+      "pdfPage": 167
+    },
+    {
+      "code": "RF21",
+      "name": "Mostrar etapas a cliente del abogado",
+      "priority": "Alta",
+      "pdfPage": 169
+    },
+    {
+      "code": "RF22",
+      "name": "Crear subetapas por administrador",
+      "priority": "Alta",
+      "pdfPage": 170
+    },
+    {
+      "code": "RF23",
+      "name": "Editar subetapas por administrador",
+      "priority": "Alta",
+      "pdfPage": 172
+    },
+    {
+      "code": "RF24",
+      "name": "Eliminar subetapas por administrador",
+      "priority": "Alta",
+      "pdfPage": 174
+    },
+    {
+      "code": "RF25",
+      "name": "Mostrar subetapa a administrador",
+      "priority": "Alta",
+      "pdfPage": 176
+    },
+    {
+      "code": "RF26",
+      "name": "Crear subetapas por abogado",
+      "priority": "Alta",
+      "pdfPage": 178
+    },
+    {
+      "code": "RF27",
+      "name": "Editar subetapas por abogado",
+      "priority": "Alta",
+      "pdfPage": 180
+    },
+    {
+      "code": "RF28",
+      "name": "Eliminar subetapas por abogado",
+      "priority": "Alta",
+      "pdfPage": 182
+    },
+    {
+      "code": "RF29",
+      "name": "Mostrar subetapa a abogado",
+      "priority": "Alta",
+      "pdfPage": 184
+    },
+    {
+      "code": "RF30",
+      "name": "Mostrar subetapa a cliente del abogado",
+      "priority": "Alta",
+      "pdfPage": 186
+    }
+  ],
+  "cards": [
+    {
+      "card": "TEC-01",
+      "name": "Inicialización del backend con NestJS",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TEC-02",
+      "name": "Estructura inicial de módulos de usuarios y autenticación",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TEC-03",
+      "name": "Esquema inicial de usuarios y administradores",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TEC-04",
+      "name": "Integración de Prisma con PostgreSQL",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TEC-05",
+      "name": "Registro y autenticación inicial con JWT",
+      "requirements": [
+        "RF07",
+        "RF08"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Implementación inicial de registro y autenticación en API, sin acreditar el flujo completo de invitación y aprobación."
+    },
+    {
+      "card": "TEC-06",
+      "name": "Protección de rutas por token y rol",
+      "requirements": [
+        "RF08"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Guardas JWT y roles como soporte de acceso autenticado."
+    },
+    {
+      "card": "ADM-01",
+      "name": "Autenticación web con credenciales",
+      "requirements": [
+        "RF08"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "ADM-02",
+      "name": "Renovación y cierre de sesión web",
+      "requirements": [
+        "RF08"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Relación parcial con la autenticación y sesión; la especificación no detalla todo el flujo refresh/logout."
+    },
+    {
+      "card": "ADM-04",
+      "name": "Generación de invitaciones a usuarios",
+      "requirements": [
+        "RF05",
+        "RF06"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "ADM-03",
+      "name": "Acceso al área privada del panel",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "ADM-06",
+      "name": "Listado de usuarios en panel administrativo",
+      "requirements": [
+        "RF04"
+      ],
+      "priority": "medium",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "ADM-05",
+      "name": "Registro mediante invitación",
+      "requirements": [
+        "RF07"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "ADM-08",
+      "name": "Desactivación administrativa con registro",
+      "requirements": [
+        "RF03"
+      ],
+      "priority": "medium",
+      "basis": "specification",
+      "note": "Desactivación administrativa como relación parcial con eliminación lógica de usuario."
+    },
+    {
+      "card": "SUP-01",
+      "name": "Modelo y módulo de bitácora de eventos",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "SUP-02",
+      "name": "Registro de desactivación administrativa de usuarios",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TEC-07",
+      "name": "Modelado del expediente sucesorio",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TEC-08",
+      "name": "Modelado de etapas y subetapas jerárquicas",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "PRO-01",
+      "name": "Creación de expediente sucesorio",
+      "requirements": [
+        "RF12"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "PRO-02",
+      "name": "Listado administrativo de expedientes",
+      "requirements": [
+        "RF16"
+      ],
+      "priority": "medium",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "PRO-04",
+      "name": "Desactivación de expediente",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "ADM-07",
+      "name": "Búsqueda/consulta de usuarios por rol",
+      "requirements": [
+        "RF13"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Apoyo a la selección del abogado responsable; no equivale a la asignación completa."
+    },
+    {
+      "card": "PRO-03",
+      "name": "Consulta individual de expediente",
+      "requirements": [
+        "RF16",
+        "RF19"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Consulta del expediente y de sus etapas: se toma la mayor prioridad entre ambos requisitos."
+    },
+    {
+      "card": "PRO-05",
+      "name": "Inicialización con las etapas base",
+      "requirements": [
+        "RF19"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Inicialización de etapas como soporte de su consulta; no se atribuye la creación de etapas a un RF de consulta."
+    },
+    {
+      "card": "PRO-06",
+      "name": "Selección de abogado responsable al crear expediente",
+      "requirements": [
+        "RF13"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "PRO-07",
+      "name": "Vista principal y mapa del expediente",
+      "requirements": [
+        "RF19"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "SUP-03",
+      "name": "Registro de acciones sobre expedientes",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-10",
+      "name": "Contador sincronizado de subetapas abiertas",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-02",
+      "name": "Creación de subetapa en una etapa",
+      "requirements": [
+        "RF22"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "EST-03",
+      "name": "Creación de subetapas hijas anidadas",
+      "requirements": [
+        "RF22"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "EST-01",
+      "name": "Creación de etapa intermedia",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-04",
+      "name": "Construcción del árbol jerárquico de subetapas",
+      "requirements": [
+        "RF25"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "EST-05",
+      "name": "Visualización del mapa de etapas",
+      "requirements": [
+        "RF19"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "EST-08",
+      "name": "Desactivación de etapa intermedia",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-09",
+      "name": "Desactivación de subetapa",
+      "requirements": [
+        "RF24"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "SUP-04",
+      "name": "Registro de creación de etapas y subetapas",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-06",
+      "name": "Consulta de detalle de etapa",
+      "requirements": [
+        "RF19"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "EST-07",
+      "name": "Consulta de detalle de subetapa",
+      "requirements": [
+        "RF25"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "DOC-05",
+      "name": "Modelo y almacenamiento de archivos PDF",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-01",
+      "name": "Creación de carpeta digital",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-02",
+      "name": "Consulta y navegación de carpetas",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-06",
+      "name": "Carga de documento PDF en carpeta",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-03",
+      "name": "Actualización de datos de carpeta",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-04",
+      "name": "Desactivación de carpeta y su contenido",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-07",
+      "name": "Visualización de documento PDF",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-08",
+      "name": "Edición de nombre y descripción del PDF",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-09",
+      "name": "Eliminación de archivo PDF",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "DOC-10",
+      "name": "Contenedor web para archivos PDF",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TAR-01",
+      "name": "Modelo de tareas asociadas a etapa/subetapa",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TAR-02",
+      "name": "Creación de tarea",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TAR-03",
+      "name": "Consulta y visualización de tareas",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TAR-04",
+      "name": "Edición de tarea",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TAR-05",
+      "name": "Completar y reabrir tarea",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "TAR-06",
+      "name": "Eliminación lógica de tarea",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-11",
+      "name": "Cierre condicionado de subetapa",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-12",
+      "name": "Cierre condicionado de etapa",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-13",
+      "name": "Bloqueo de operaciones en etapas/subetapas cerradas",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    },
+    {
+      "card": "EST-14",
+      "name": "Actualización del árbol tras cambios",
+      "requirements": [
+        "RF25"
+      ],
+      "priority": "high",
+      "basis": "specification",
+      "note": "Asociación por funcionalidad, sin inferir implementación completa del requisito."
+    },
+    {
+      "card": "SUP-05",
+      "name": "Protección de concurrencia sobre estados de etapa",
+      "requirements": [],
+      "priority": "medium",
+      "basis": "provisional",
+      "note": "Sin prioridad explícita aplicable en las especificaciones. Media provisional; no se heredan códigos del catálogo con otra funcionalidad."
+    }
+  ]
+}

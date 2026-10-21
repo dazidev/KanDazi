@@ -4,14 +4,14 @@ Aplicación de uso personal con **Next.js 16 / App Router, React, TypeScript, Po
 
 ## Incluye
 
-- Varios tableros independientes. Plantilla con Pendiente, En desarrollo, Completada, Validada, Pruebas y Finalizada, o creación desde una columna vacía.
+- Varios tableros independientes con iteración, módulo(s) en el objetivo y fechas de inicio y fin. Plantilla con Pendiente, En desarrollo, Completada, Validada, Pruebas y Finalizada, o creación desde una columna vacía.
 - Columnas con nombre, ocho colores iniciales y selector de color personalizado. Se pueden reordenar y eliminar. Al eliminar una columna se conservan las tarjetas.
-- Tarjetas rectangulares con texto y tres prioridades: baja (verde), media (amarillo) y alta (coral). El texto de prioridad acompaña al color.
+- Tarjetas rectangulares con nombre, descripción y tres prioridades: baja (verde), media (amarillo) y alta (coral). El texto de prioridad acompaña al color.
 - Arrastre libre horizontal y vertical, incluso entre columnas y entre filas. La posición exacta se persiste; no se fuerza una cuadrícula.
 - Edición con doble clic o con el botón de la tarjeta. Flechas del teclado para mover 5 píxeles; Mayús + flecha para mover 20; Enter para editar.
 - Guardado automático con una cola de escrituras y revisiones para detectar cambios concurrentes entre pestañas. Aviso al salir con cambios sin guardar y copia JSON de emergencia si falla el guardado.
 - Búsqueda, zoom y ajuste del tablero al ancho disponible.
-- Exportación del tablero completo a **PNG y PDF** con título, sprint, objetivo, fecha y leyenda de prioridad. La búsqueda y el zoom no afectan a la exportación. El PDF contiene una imagen en una página del tamaño del tablero, no texto vectorial ni páginas A4 recortadas.
+- Exportación del tablero completo a **PNG y PDF** con título, iteración, módulos, fechas de inicio y fin y leyenda de prioridad. La búsqueda y el zoom no afectan a la exportación. El PDF contiene una imagen en una página del tamaño del tablero, no texto vectorial ni páginas A4 recortadas.
 
 ## Ejecutar
 
@@ -74,12 +74,25 @@ src/
 prisma/
   schema.prisma
   migrations/               # Migración inicial PostgreSQL
+data/thesis-iterations.json  # Datos de las 19 iteraciones extraídos del Excel
 scripts/
   local-postgres.mjs         # PostgreSQL local opcional
   seed.ts                   # Tablero ilustrativo
+  import-thesis.ts           # Carga idempotente de las 19 iteraciones
 ```
 
 `Board` tiene sus columnas y tarjetas. Cada tarjeta almacena `x` e `y` en coordenadas del lienzo. Las columnas son regiones visuales; una tarjeta puede cruzar su límite. Los cambios se validan con Zod y se guardan en una transacción. `revision` evita sobrescribir cambios desde otra pestaña.
+
+## Iteraciones de la tesis
+
+Para cargar los 19 tableros del Excel, después de configurar `.env`:
+
+```sh
+yarn db:migrate
+yarn db:import-thesis
+```
+
+Se crean IT-01 a IT-19 con sus fechas semanales, módulos en el objetivo y 69 tarjetas: 61 apariciones de las tarjetas del Excel y ocho tarjetas técnicas respaldadas por commits para las cuatro semanas sin tarjetas asociadas. La carga conserva el tablero anterior, genera un respaldo local y puede repetirse sin duplicar ni sobrescribir tableros ya importados. Consulta `data/README.md` para el origen y los criterios de selección. Las prioridades se contrastaron con las especificaciones del PDF de tesis por funcionalidad: Alta o Media; cuando no existe prioridad documentada se usa Media provisional. La trazabilidad está en `data/thesis-priorities.json`.
 
 ## Comprobaciones
 
@@ -95,7 +108,7 @@ La prueba de integración crea un tablero temporal, comprueba creación, persist
 ## Notas de uso
 
 - Pensado para uso personal local, sin autenticación ni colaboración multiusuario. El servidor de los scripts `dev` y `start` escucha en loopback. Antes de publicarlo, añade autenticación y autorización por tablero.
-- Hasta 20 columnas y 300 tarjetas por tablero; hasta 300 caracteres por tarjeta. El lienzo crece verticalmente hasta las tarjetas y permite posicionarlas hasta `y = 10000`.
+- Hasta 20 columnas y 300 tarjetas por tablero; hasta 300 caracteres para el nombre y 2000 para la descripción de cada tarjeta. El lienzo crece verticalmente hasta las tarjetas y permite posicionarlas hasta `y = 10000`.
 - PNG se genera a escala 2× en tableros habituales. En tableros muy grandes la escala se ajusta para no superar 32 megapíxeles. Un tablero ancho puede necesitar una página horizontal o una figura ampliada dentro de la tesis.
 - Las tarjetas admiten superposición por diseño. Antes de exportar, distribúyelas para que el texto sea visible.
 - La interfaz usa DM Sans y Manrope de Google Fonts con fuentes de sistema como alternativa. La exportación usa Arial/Helvetica y no necesita descargar fuentes.

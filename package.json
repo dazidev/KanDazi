@@ -11,7 +11,8 @@
     "db:migrate": "prisma migrate deploy",
     "db:local": "node scripts/local-postgres.mjs",
     "test": "tsx --test tests/*.test.ts",
-    "db:seed": "tsx scripts/seed.ts"
+    "db:seed": "tsx scripts/seed.ts",
+    "db:import-thesis": "tsx scripts/import-thesis.ts"
   },
   "dependencies": {
     "next": "16.4.2",

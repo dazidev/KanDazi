@@ -14,7 +14,7 @@ try {
   const changedIds = new Set(plan.changes.map(change => change.boardId));
   for (const board of plan.boards) boardSchema.parse(board);
   const createdColumns = plan.boards.reduce((total, board, index) => total + board.columns.length - input[index].columns.length, 0);
-  console.log(JSON.stringify({ mode: process.argv.includes('--apply') ? 'apply' : 'preview', boards: input.length, movedCards: plan.changes.length, createdColumns, changes: plan.changes }, null, 2));
+  console.log(JSON.stringify({ mode: process.argv.includes('--apply') ? 'apply' : 'preview', boards: input.length, movedCards: plan.changes.filter(change => change.kind === 'moved').length, createdCards: plan.changes.filter(change => change.kind === 'created').length, createdColumns, changes: plan.changes }, null, 2));
   if (process.argv.includes('--apply') && changedIds.size) {
     await mkdir('.data/backups', { recursive: true });
     const backup = `.data/backups/before-carryover-${Date.now()}.json`;
@@ -29,7 +29,8 @@ try {
         }
         for (const change of plan.changes.filter(change => change.boardId === board.id)) {
           const card = board.cards.find(card => card.id === change.cardId)!;
-          await tx.card.update({ where: { id: card.id }, data: { x: card.x, y: card.y } });
+          if (change.kind === 'created') await tx.card.create({ data: { ...card, boardId: board.id } });
+          else await tx.card.update({ where: { id: card.id }, data: { x: card.x, y: card.y } });
         }
       }
     }, { timeout: 60000 });

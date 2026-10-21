@@ -332,6 +332,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "431e239c-186a-4d20-a59c-2057faf4649a",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -343,6 +349,24 @@
             "priority": "high",
             "x": 536,
             "y": 94
+          },
+          {
+            "id": "b6380419-aa1c-447d-9b83-0994577d2bb9",
+            "code": "ADM-02",
+            "name": "Renovación y cierre de sesión web",
+            "description": "JWT/refresh/logout; verificar mediante casos de prueba futuros",
+            "priority": "high",
+            "x": 1576,
+            "y": 94
+          },
+          {
+            "id": "dd2abf45-4516-4d36-a830-dda8afdb96a1",
+            "code": "ADM-04",
+            "name": "Generación de invitaciones a usuarios",
+            "description": "Incluye emisión y consulta de invitación",
+            "priority": "high",
+            "x": 1576,
+            "y": 286
           }
         ]
       }
@@ -391,6 +415,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "77095dc6-d14f-4618-ae29-1f4fa0150048",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -411,6 +441,15 @@
             "priority": "high",
             "x": 536,
             "y": 268
+          },
+          {
+            "id": "8393bc0a-32aa-444f-97c5-ad150e69c48f",
+            "code": "ADM-04",
+            "name": "Generación de invitaciones a usuarios",
+            "description": "Incluye emisión y consulta de invitación",
+            "priority": "high",
+            "x": 1576,
+            "y": 94
           }
         ]
       }
@@ -459,6 +498,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "6075e51b-fb85-410a-9861-2dc5ad58a97e",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -469,6 +514,15 @@
             "description": "Consulta API + presentación en tabla",
             "priority": "medium",
             "x": 536,
+            "y": 94
+          },
+          {
+            "id": "7da4ff88-a763-4f03-bc96-50ec7fd8e631",
+            "code": "ADM-04",
+            "name": "Generación de invitaciones a usuarios",
+            "description": "Incluye emisión y consulta de invitación",
+            "priority": "high",
+            "x": 1576,
             "y": 94
           }
         ]
@@ -669,6 +723,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "7a262806-5367-46ea-93ca-5c193d45ef3f",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -689,6 +749,15 @@
             "priority": "medium",
             "x": 536,
             "y": 358
+          },
+          {
+            "id": "c1f2f07a-a4a7-4c4a-a856-25b08df9ea2b",
+            "code": "SUP-01",
+            "name": "Modelo y módulo de bitácora de eventos",
+            "description": "Componente transversal de auditoría; vinculado aquí con Gestión de usuarios por su introducción en la fase administrativa. No figura como módulo independiente en la figura 5.1.",
+            "priority": "medium",
+            "x": 1576,
+            "y": 94
           }
         ]
       }
@@ -772,6 +841,15 @@
             "priority": "medium",
             "x": 536,
             "y": 460
+          },
+          {
+            "id": "32f32e06-824e-47e8-a0b2-3289e53e30f5",
+            "code": "SUP-01",
+            "name": "Modelo y módulo de bitácora de eventos",
+            "description": "Componente transversal de auditoría; vinculado aquí con Gestión de usuarios por su introducción en la fase administrativa. No figura como módulo independiente en la figura 5.1.",
+            "priority": "medium",
+            "x": 1576,
+            "y": 268
           }
         ]
       }
@@ -965,6 +1043,15 @@
             "priority": "medium",
             "x": 1576,
             "y": 94
+          },
+          {
+            "id": "19c92486-165b-4a32-94bf-8bed84005b99",
+            "code": "PRO-07",
+            "name": "Vista principal y mapa del expediente",
+            "description": "Consulta + visualización del proceso en panel",
+            "priority": "high",
+            "x": 1576,
+            "y": 268
           }
         ]
       }
@@ -1039,6 +1126,24 @@
             "priority": "high",
             "x": 1576,
             "y": 250
+          },
+          {
+            "id": "09b19da8-18e9-48f7-93a8-628fc7bd547e",
+            "code": "PRO-07",
+            "name": "Vista principal y mapa del expediente",
+            "description": "Consulta + visualización del proceso en panel",
+            "priority": "high",
+            "x": 1576,
+            "y": 424
+          },
+          {
+            "id": "08136121-0abc-4117-b093-1693ac17d9bc",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 1576,
+            "y": 598
           }
         ]
       }
@@ -1087,6 +1192,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "2d9cd303-6819-4d59-8e13-0520afd9deb6",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -1170,6 +1281,15 @@
             "priority": "high",
             "x": 536,
             "y": 1470
+          },
+          {
+            "id": "d54beb79-cd38-4307-bf64-82d1250bd444",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 1576,
+            "y": 94
           }
         ]
       }
@@ -1253,6 +1373,15 @@
             "priority": "medium",
             "x": 1576,
             "y": 94
+          },
+          {
+            "id": "39a72dfe-5b7f-4f38-a9b4-d09febabd130",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 1576,
+            "y": 268
           }
         ]
       }
@@ -1345,6 +1474,15 @@
             "priority": "medium",
             "x": 536,
             "y": 598
+          },
+          {
+            "id": "033ebd88-3f6e-4152-9117-d8eb5755be3e",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 1576,
+            "y": 268
           }
         ]
       }
@@ -1393,6 +1531,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "4a23e41d-9265-4479-9e0b-b5f9ac3289d8",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -1512,6 +1656,15 @@
             "priority": "medium",
             "x": 536,
             "y": 2160
+          },
+          {
+            "id": "26957d29-6fe0-4a75-8223-3fc630cbca73",
+            "code": "EST-10",
+            "name": "Contador sincronizado de subetapas abiertas",
+            "description": "openSubstages y recuento transaccional",
+            "priority": "medium",
+            "x": 1576,
+            "y": 94
           }
         ]
       }

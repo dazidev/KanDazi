@@ -41,3 +41,35 @@ test('Una tarjeta presente en tres iteraciones se aplaza en las dos primeras y c
   assert.deepEqual(result.changes.map(change => change.nextIteration), ['IT-02', 'IT-03']);
   assert.deepEqual(result.boards[2], input[2]);
 });
+test('Una tarjeta que pasa de IT-02 a IT-05 aparece también en IT-03 e IT-04, sin extenderse fuera de su recorrido', () => {
+  const input = [
+    board('IT-01', '2026-01-19', '2026-01-25', []),
+    board('IT-02', '2026-02-02', '2026-02-08', ['ADM-01']),
+    board('IT-03', '2026-02-09', '2026-02-15', []),
+    board('IT-04', '2026-02-16', '2026-02-22', []),
+    board('IT-05', '2026-02-23', '2026-03-01', ['ADM-01']),
+    board('IT-06', '2026-03-02', '2026-03-08', []),
+  ];
+  input[1].cards[0].description = 'Alcance en la iteración 2';
+  input[4].cards[0].description = 'Alcance ampliado en la iteración 5';
+  input[4].cards[0].x = 1316;
+  const original = structuredClone(input);
+  const result = organizeCarryovers(input);
+  assert.equal(result.changes.filter(change => change.kind === 'created').length, 2);
+  for (const index of [2, 3]) {
+    const card = result.boards[index].cards[0];
+    assert.equal(card.code, 'ADM-01');
+    assert.equal(card.name, input[1].cards[0].name);
+    assert.equal(card.description, 'Alcance en la iteración 2');
+    assert.equal(card.priority, input[1].cards[0].priority);
+    assert.equal(card.x, 1576);
+  }
+  assert.equal(new Set(result.boards.flatMap(board => board.cards.map(card => card.id))).size, 4);
+  assert.deepEqual(result.boards[0], input[0]);
+  assert.deepEqual(result.boards[4], input[4]);
+  assert.deepEqual(result.boards[5], input[5]);
+  assert.deepEqual(input, original);
+  const repeated = organizeCarryovers(result.boards);
+  assert.equal(repeated.changes.length, 0);
+  assert.deepEqual(repeated.boards, result.boards);
+});

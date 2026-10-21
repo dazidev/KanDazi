@@ -93,9 +93,9 @@ yarn db:migrate
 yarn db:import-thesis
 ```
 
-Se crean IT-01 a IT-19 con sus fechas semanales, módulos en el objetivo y 69 tarjetas: 61 apariciones de las tarjetas del Excel y ocho tarjetas técnicas respaldadas por commits para las cuatro semanas sin tarjetas asociadas. La carga conserva el tablero anterior, genera un respaldo local y puede repetirse sin duplicar ni sobrescribir tableros ya importados. Consulta `data/README.md` para el origen y los criterios de selección. Las prioridades se contrastaron con las especificaciones del PDF de tesis por funcionalidad: Alta o Media; cuando no existe prioridad documentada se usa Media provisional. La trazabilidad está en `data/thesis-priorities.json`.
+Se crean IT-01 a IT-19 con sus fechas semanales, módulos en el objetivo y 82 apariciones de tarjetas: 61 del Excel, ocho tarjetas técnicas respaldadas por commits y 13 copias de continuidad entre iteraciones. La carga conserva el tablero anterior, genera un respaldo local y puede repetirse sin duplicar ni sobrescribir tableros ya importados. Consulta `data/README.md` para el origen y los criterios de selección. Las prioridades se contrastaron con las especificaciones del PDF de tesis por funcionalidad: Alta o Media; cuando no existe prioridad documentada se usa Media provisional. La trazabilidad está en `data/thesis-priorities.json`.
 
-Las tarjetas que vuelven a aparecer en una iteración posterior se colocan en «Siguiente iteración» en sus apariciones anteriores. Para revisar tableros ya existentes, usa `yarn db:organize-iterations`; añade `--apply` para aplicar el plan con respaldo, conservando las posiciones ya organizadas y el estado de la última aparición.
+Las tarjetas que vuelven a aparecer en una iteración posterior se colocan en «Siguiente iteración» en sus apariciones anteriores y se copian a cada iteración intermedia donde falten, conservando identificador, nombre, descripción y prioridad. Por ejemplo, una tarjeta presente en IT-02 y en IT-05 también aparece en IT-03 e IT-04. Estas copias muestran continuidad, no trabajo nuevo acreditado en cada semana. Para revisar tableros ya existentes, usa `yarn db:organize-iterations`; añade `--apply` para aplicar el plan con respaldo, conservando las posiciones ya organizadas y el estado de la última aparición.
 
 ## Comprobaciones
 

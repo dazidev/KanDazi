@@ -8,13 +8,22 @@ const entries = source.boards as { id: string; data: unknown }[];
 const boards = entries.map(entry => boardSchema.parse(entry.data));
 const audit = JSON.parse(readFileSync(new URL('../data/thesis-priorities.json', import.meta.url), 'utf8'));
 
-test('La carga contiene 19 iteraciones válidas, 69 tarjetas y claves globalmente únicas', () => {
+test('La carga contiene 19 iteraciones válidas, 69 apariciones originales y 13 de continuidad con claves únicas', () => {
   assert.equal(boards.length, 19);
   assert.deepEqual(boards.map(board => board.iteration), Array.from({ length: 19 }, (_, index) => `IT-${String(index + 1).padStart(2, '0')}`));
-  assert.equal(boards.reduce((count, board) => count + board.cards.length, 0), 69);
+  assert.equal(boards.reduce((count, board) => count + board.cards.length, 0), 82);
   assert.equal(new Set(boards.flatMap(board => board.cards).filter(card => !card.code.startsWith('TEC-')).map(card => card.code)).size, 50);
   const ids = entries.flatMap((entry, index) => [entry.id, ...boards[index].columns.map(column => column.id), ...boards[index].cards.map(card => card.id)]);
   assert.equal(new Set(ids).size, ids.length);
+});
+
+test('Cada identificador aparece en todas las iteraciones entre su primera y su última aparición', () => {
+  const codes = new Set(boards.flatMap(board => board.cards.map(card => card.code)));
+  for (const code of codes) {
+    const indexes = boards.flatMap((board, index) => board.cards.some(card => card.code === code) ? [index] : []);
+    assert.equal(indexes.length, indexes.at(-1)! - indexes[0] + 1, `Recorrido incompleto de ${code}`);
+    for (const index of indexes) assert.equal(boards[index].cards.filter(card => card.code === code).length, 1);
+  }
 });
 
 test('Cada tablero conserva una semana de lunes a domingo, nombre de iteración y módulos', () => {

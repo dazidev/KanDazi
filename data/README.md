@@ -1,6 +1,6 @@
 # Iteraciones de tesis
 
-`thesis-iterations.json` contiene 19 tableros, 61 apariciones semanales de las 50 tarjetas maestras del Excel `kanban_tesis_modulos_corregidos.xlsx` y ocho tarjetas técnicas adicionales. Una tarjeta maestra puede aparecer en varias semanas; cada aparición es independiente y conserva su identificador de origen.
+`thesis-iterations.json` contiene 19 tableros con 82 apariciones: 61 apariciones semanales de las 50 tarjetas maestras del Excel `kanban_tesis_modulos_corregidos.xlsx` y ocho tarjetas técnicas adicionales, más 13 copias de continuidad para completar las iteraciones intermedias. Una tarjeta maestra puede aparecer en varias semanas; cada aparición es independiente y conserva su identificador de origen.
 
 - Título: Iteración 01 a Iteración 19. Identificador: IT-01 a IT-19.
 - Inicio y fin: lunes y domingo de «Iteraciones semanales», sin convertir de zona horaria.
@@ -26,7 +26,7 @@ Se usa la especificación de RF01 (tabla 4.12, página 67 del PDF) y el anexo A 
 
 `thesis-priorities.json` conserva fuera de las tarjetas la trazabilidad entre código de tarjeta, especificaciones, página del PDF, prioridad y carácter provisional. Si hay varias asociaciones, se toma la prioridad más alta. Las tablas RNF carecen de prioridad explícita. El anexo suministrado tampoco incluye especificaciones de carpetas, documentos ni tareas; esas tarjetas y otras sin prioridad aplicable quedan en Media provisional, según el criterio autorizado por el usuario.
 
-Resultado: 27 apariciones de tarjetas con prioridad Alta y 42 con prioridad Media. No se fuerza ninguna tarjeta a Baja: la consulta de invitaciones tiene prioridad Baja, pero comparte tarjeta con la generación de invitaciones, de prioridad Alta. Las asociaciones parciales conservan las limitaciones de alcance originales y no acreditan el cumplimiento íntegro del RF.
+Las 69 apariciones originales tienen 27 prioridades Alta y 42 Media. Al incluir las 13 copias de continuidad, que conservan la prioridad de su aparición precedente, el total es de 33 Alta y 49 Media. No se fuerza ninguna tarjeta a Baja: la consulta de invitaciones tiene prioridad Baja, pero comparte tarjeta con la generación de invitaciones, de prioridad Alta. Las asociaciones parciales conservan las limitaciones de alcance originales y no acreditan el cumplimiento íntegro del RF.
 
 ## Carga
 
@@ -36,4 +36,4 @@ Ejecutar `yarn db:migrate` y después `yarn db:import-thesis`. Se respalda el co
 
 `yarn db:organize-iterations` muestra el plan sobre los tableros actuales sin modificarlos. `yarn db:organize-iterations --apply` crea un respaldo y aplica el plan en una transacción, comprobando las revisiones para no sobrescribir cambios concurrentes.
 
-Se compara el identificador de tarjeta entre tableros con fechas. Si el mismo código aparece en una iteración posterior al fin de la actual, su aparición anterior pasa a «Siguiente iteración». Se reutilizan las columnas existentes aunque varíen mayúsculas o acentos y se conservan las posiciones de las tarjetas ya colocadas allí. La última aparición, las tarjetas sin repetición y los demás campos y estados manuales se conservan. Las semanas no tienen que ser consecutivas y no se crean copias en semanas intermedias.
+Se compara el identificador de tarjeta entre tableros con fechas. Si el mismo código aparece en una iteración posterior al fin de la actual, su aparición anterior pasa a «Siguiente iteración». Se reutilizan las columnas existentes aunque varíen mayúsculas o acentos y se conservan las posiciones de las tarjetas ya colocadas allí. La última aparición, las tarjetas sin repetición y los demás campos y estados manuales se conservan. Se crean copias con el mismo identificador visible, nombre, descripción y prioridad en cada tablero intermedio que aún no contenga la tarjeta. Cada copia tiene un UUID propio y se coloca en «Siguiente iteración» sin superponerse. Se utiliza el contenido de la aparición precedente, sin adelantar cambios introducidos en una aparición posterior. No se extiende el recorrido antes de la primera aparición ni después de la última, ni se inventan tableros para semanas sin iteración. Las copias representan continuidad del trabajo, no una nueva implementación ni evidencia de actividad en GitHub durante esa semana. Repetir el comando no duplica copias.

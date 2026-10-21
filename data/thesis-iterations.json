@@ -249,6 +249,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "918a71a2-7698-462d-b18f-c0edd6339b19",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -258,7 +264,7 @@
             "name": "Autenticación web con credenciales",
             "description": "Código web + API; no se registra validación formal",
             "priority": "high",
-            "x": 536,
+            "x": 1576,
             "y": 94
           },
           {
@@ -267,7 +273,7 @@
             "name": "Renovación y cierre de sesión web",
             "description": "JWT/refresh/logout; verificar mediante casos de prueba futuros",
             "priority": "high",
-            "x": 536,
+            "x": 1576,
             "y": 268
           },
           {
@@ -276,7 +282,7 @@
             "name": "Generación de invitaciones a usuarios",
             "description": "Incluye emisión y consulta de invitación",
             "priority": "high",
-            "x": 536,
+            "x": 1576,
             "y": 460
           }
         ]
@@ -580,6 +586,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "220ebfe8-7938-4f7c-a481-92c75a517ba9",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -598,8 +610,8 @@
             "name": "Modelo y módulo de bitácora de eventos",
             "description": "Componente transversal de auditoría; vinculado aquí con Gestión de usuarios por su introducción en la fase administrativa. No figura como módulo independiente en la figura 5.1.",
             "priority": "medium",
-            "x": 536,
-            "y": 268
+            "x": 1576,
+            "y": 94
           },
           {
             "id": "8ca3d444-8db0-564a-a858-6474a4c76203",
@@ -725,6 +737,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "dafc50f4-e726-4939-b7a9-547382b67005",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -734,7 +752,7 @@
             "name": "Creación de expediente sucesorio",
             "description": "Tipos testamentario, intestamentario y mixto",
             "priority": "high",
-            "x": 536,
+            "x": 1576,
             "y": 94
           },
           {
@@ -802,6 +820,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "438481f9-681d-457a-af35-ae5d5fb5425d",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -847,8 +871,8 @@
             "name": "Vista principal y mapa del expediente",
             "description": "Consulta + visualización del proceso en panel",
             "priority": "high",
-            "x": 536,
-            "y": 792
+            "x": 1576,
+            "y": 94
           },
           {
             "id": "5f43ba6a-94b7-506e-be81-61e82b681777",
@@ -924,6 +948,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "95d74bd1-838b-4a72-8fb1-6ead587ee78d",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -933,7 +963,7 @@
             "name": "Contador sincronizado de subetapas abiertas",
             "description": "openSubstages y recuento transaccional",
             "priority": "medium",
-            "x": 536,
+            "x": 1576,
             "y": 94
           }
         ]
@@ -983,6 +1013,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "7ef06f22-e72d-41e4-a038-d361570d0b61",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -992,7 +1028,7 @@
             "name": "Creación de subetapa en una etapa",
             "description": "Entidad y alta de subetapa",
             "priority": "high",
-            "x": 536,
+            "x": 1576,
             "y": 94
           },
           {
@@ -1001,7 +1037,7 @@
             "name": "Creación de subetapas hijas anidadas",
             "description": "Relación parentSubstageId; profundidad variable",
             "priority": "high",
-            "x": 536,
+            "x": 1576,
             "y": 250
           }
         ]
@@ -1182,6 +1218,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "26b304e1-9217-4376-aa89-0b6239070456",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -1209,8 +1251,8 @@
             "name": "Modelo y almacenamiento de archivos PDF",
             "description": "Almacenamiento seguro gestionado por backend",
             "priority": "medium",
-            "x": 536,
-            "y": 424
+            "x": 1576,
+            "y": 94
           }
         ]
       }
@@ -1259,6 +1301,12 @@
             "name": "Finalizada",
             "color": "#E5E9EC",
             "position": 5
+          },
+          {
+            "id": "a137b231-ec07-4091-95b7-553e9cf6c52e",
+            "name": "Siguiente iteración",
+            "color": "#D6EBEA",
+            "position": 6
           }
         ],
         "cards": [
@@ -1286,8 +1334,8 @@
             "name": "Carga de documento PDF en carpeta",
             "description": "Validación de tipo application/pdf en API",
             "priority": "medium",
-            "x": 536,
-            "y": 424
+            "x": 1576,
+            "y": 94
           },
           {
             "id": "de1eb349-f936-56a9-962b-e608b1b0f41e",

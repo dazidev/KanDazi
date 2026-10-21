@@ -6,7 +6,7 @@
 - Inicio y fin: lunes y domingo de «Iteraciones semanales», sin convertir de zona horaria.
 - Objetivo: módulos de las tarjetas trabajadas en esa iteración.
 - Tarjetas del Excel: identificador, funcionalidad implementada como nombre y límite/alcance de evidencia como descripción.
-- Todas se colocan en «Completada». Las prioridades proceden de las especificaciones del PDF, reasociadas por funcionalidad. No se infieren validación formal, pruebas ni aceptación.
+- Las apariciones anteriores de una tarjeta que vuelve a aparecer en otra semana se colocan en «Siguiente iteración». Su última aparición se importa en «Completada». Las prioridades proceden de las especificaciones del PDF, reasociadas por funcionalidad. No se infieren validación formal, pruebas ni aceptación.
 - No se importan requisitos RF/RNF, enlaces ni matrices de capturas a las tarjetas.
 
 ## Tarjetas técnicas añadidas tras revisar los repositorios
@@ -31,3 +31,9 @@ Resultado: 27 apariciones de tarjetas con prioridad Alta y 42 con prioridad Medi
 ## Carga
 
 Ejecutar `yarn db:migrate` y después `yarn db:import-thesis`. Se respalda el contenido existente en `.data/backups/` (excluido de Git) y se importan los 19 tableros en una transacción. Los identificadores estables permiten repetir la carga sin duplicar tableros ni sobrescribir ediciones posteriores. Los tableros anteriores se conservan.
+
+## Organización de tarjetas que continúan en otra iteración
+
+`yarn db:organize-iterations` muestra el plan sobre los tableros actuales sin modificarlos. `yarn db:organize-iterations --apply` crea un respaldo y aplica el plan en una transacción, comprobando las revisiones para no sobrescribir cambios concurrentes.
+
+Se compara el identificador de tarjeta entre tableros con fechas. Si el mismo código aparece en una iteración posterior al fin de la actual, su aparición anterior pasa a «Siguiente iteración». Se reutilizan las columnas existentes aunque varíen mayúsculas o acentos y se conservan las posiciones de las tarjetas ya colocadas allí. La última aparición, las tarjetas sin repetición y los demás campos y estados manuales se conservan. Las semanas no tienen que ser consecutivas y no se crean copias en semanas intermedias.

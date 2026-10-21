@@ -29,13 +29,16 @@ test('Cada tablero conserva una semana de lunes a domingo, nombre de iteración 
   assert.equal(boards[18].endDate, '2026-10-04');
 });
 
-test('Las tarjetas conservan identificador y descripción y quedan en Completada sin superponerse', () => {
+test('Las tarjetas repetidas se aplazan y las últimas apariciones quedan en Completada, sin superponerse', () => {
   for (const board of boards) {
     const completed = board.columns.find(column => column.name === 'Completada')!;
     for (const [index, card] of board.cards.entries()) {
       assert.ok(card.code && card.name && card.description);
-      assert.equal(Math.floor(card.x / COLUMN_WIDTH), completed.position);
-      if (index) assert.ok(board.cards[index - 1].y + cardHeight(board.cards[index - 1]) + 20 <= card.y);
+      const hasLater = boards.some(candidate => candidate.startDate > board.endDate && candidate.cards.some(other => other.code === card.code));
+      const column = hasLater ? board.columns.find(column => column.name === 'Siguiente iteración')! : completed;
+      assert.ok(column);
+      assert.equal(Math.floor(card.x / COLUMN_WIDTH), column.position);
+      for (const before of board.cards.slice(0, index).filter(other => Math.floor(other.x / COLUMN_WIDTH) === column.position)) assert.ok(before.y + cardHeight(before) + 20 <= card.y);
     }
   }
 });

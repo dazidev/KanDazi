@@ -95,6 +95,8 @@ yarn db:import-thesis
 
 Se crean IT-01 a IT-19 con sus fechas semanales, módulos en el objetivo y 69 tarjetas: 61 apariciones de las tarjetas del Excel y ocho tarjetas técnicas respaldadas por commits para las cuatro semanas sin tarjetas asociadas. La carga conserva el tablero anterior, genera un respaldo local y puede repetirse sin duplicar ni sobrescribir tableros ya importados. Consulta `data/README.md` para el origen y los criterios de selección. Las prioridades se contrastaron con las especificaciones del PDF de tesis por funcionalidad: Alta o Media; cuando no existe prioridad documentada se usa Media provisional. La trazabilidad está en `data/thesis-priorities.json`.
 
+Las tarjetas que vuelven a aparecer en una iteración posterior se colocan en «Siguiente iteración» en sus apariciones anteriores. Para revisar tableros ya existentes, usa `yarn db:organize-iterations`; añade `--apply` para aplicar el plan con respaldo, conservando las posiciones ya organizadas y el estado de la última aparición.
+
 ## Comprobaciones
 
 ```sh

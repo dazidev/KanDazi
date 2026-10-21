@@ -12,7 +12,8 @@
     "db:local": "node scripts/local-postgres.mjs",
     "test": "tsx --test tests/*.test.ts",
     "db:seed": "tsx scripts/seed.ts",
-    "db:import-thesis": "tsx scripts/import-thesis.ts"
+    "db:import-thesis": "tsx scripts/import-thesis.ts",
+    "db:organize-iterations": "tsx scripts/organize-iterations.ts"
   },
   "dependencies": {
     "next": "16.4.2",

@@ -3,7 +3,7 @@ import { CARD_WIDTH, COLUMN_WIDTH, type Board, type Card } from './board';
 export const EXPORT_CARD_WIDTH = 300;
 const GAP = 10;
 const lines = (text: string, length: number) => text ? text.split('\n').reduce((sum, line) => sum + Math.max(1, Math.ceil(line.length / length)), 0) : 0;
-const estimatedHeight = (card: Card) => 60 + lines(card.name, 30) * 21 + lines(card.description, 36) * 20;
+const estimatedHeight = (card: Card) => 54 + lines(card.name, 18) * 34;
 
 // The export is a reading layout, independent of the saved editing coordinates.
 export function exportLayout(board: Pick<Board, 'columns' | 'cards'>) {

@@ -37,3 +37,12 @@ test('La exportación ordena por posición vertical sin heredar espacios vacíos
   assert.equal(layout.columns[2].cards[0].y, 90);
   assert.ok(layout.columns[2].estimatedHeight < 1000);
 });
+
+test('La descripción no modifica el tamaño de la exportación ni se borra del tablero original', () => {
+  const board = makeTemplate();
+  const before = exportLayout(board);
+  board.cards[0].description = 'Descripción extensa que solo se conserva para la edición. '.repeat(30);
+  const after = exportLayout(board);
+  assert.deepEqual(after.columns.map(column => [column.width, column.lanes, column.estimatedHeight]), before.columns.map(column => [column.width, column.lanes, column.estimatedHeight]));
+  assert.ok(board.cards[0].description.length > 1000);
+});

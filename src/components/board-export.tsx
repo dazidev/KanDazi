@@ -18,7 +18,7 @@ export default function BoardExport({ board }: { board: Board }) {
             const priority = priorities[card.priority];
             return <article className="export-card" key={card.id} style={{ background: priority.color, borderColor: `${priority.dot}80` }}>
               <div className="export-card-labels"><span style={{ color: priority.ink }}>{priority.label}</span><span>{card.code || `T-${String(board.cards.findIndex(item => item.id === card.id) + 1).padStart(2, '0')}`}</span></div>
-              <h3>{card.name}</h3>{card.description && <p>{card.description}</p>}
+              <h3>{card.name}</h3>
             </article>;
           })}
         </div>

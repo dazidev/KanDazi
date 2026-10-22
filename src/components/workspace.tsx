@@ -1,5 +1,6 @@
 'use client';
 
+import BoardExport from '@/components/board-export';
 import { useCallback, useEffect, useRef, useState, type FormEvent, type PointerEvent as ReactPointerEvent } from 'react';
 import { ArrowDownToLine, ArrowLeft, ArrowRight, Check, ChevronDown, CircleHelp, Columns3, Download, FileImage, FileText, Folder, GripVertical, LayoutDashboard, LoaderCircle, MoreHorizontal, Plus, Search, Settings2, Trash2, X, ZoomIn, ZoomOut } from 'lucide-react';
 import { boardHeight, cardHeight, CARD_WIDTH, clampPosition, COLUMN_WIDTH, columnColors, HEADER_HEIGHT, priorities, type Board, type Card, type Column, type Priority } from '@/lib/board';
@@ -152,9 +153,10 @@ export default function Workspace() {
     try {
       await document.fonts.ready;
       const { toPng } = await import('html-to-image');
-      const node = exportRef.current;
+      const node = exportRef.current.firstElementChild as HTMLElement;
+      if (!node) throw new Error('No se encontró el tablero para exportar.');
       const width = node.scrollWidth, height = node.scrollHeight;
-      const pixelRatio = Math.min(2, Math.sqrt(32_000_000 / (width * height)));
+      const pixelRatio = Math.min(3, Math.sqrt(32_000_000 / (width * height)));
       const png = await toPng(node, { backgroundColor: '#FFFFFF', pixelRatio, width, height, cacheBust: true, skipFonts: true });
       const name = board.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9-]+/g, '-').toLowerCase() || 'tablero';
       if (format === 'png') { setReadyDownload({ url: png, name: `${name}.png` }); download(png, `${name}.png`); }
@@ -200,7 +202,7 @@ export default function Workspace() {
           </section>
           {readyDownload && <div className="download-ready" role="status"><Check size={15}/><span>Tu archivo está listo.</span><a href={readyDownload.url} download={readyDownload.name}>Descargar {readyDownload.name.endsWith(".pdf") ? "PDF" : "PNG"}</a><button aria-label="Cerrar descarga" onClick={() => setReadyDownload(null)}><X size={14}/></button></div>}
           <div className="below-board"><div className="priority-legend"><span>PRIORIDAD</span>{Object.entries(priorities).map(([key, p]) => <span key={key}><i style={{ background: p.dot }}/>{p.label}</span>)}</div><span className="quiet-note">Un proceso claro también cuenta una historia.</span></div>
-          <div className="offscreen-export" aria-hidden="true" inert><div ref={exportRef} className="export-sheet" style={{ width: board.columns.length * COLUMN_WIDTH + 64 }}><div className="export-heading"><div><p>TABLERO KANBAN</p><h1>{board.title}</h1><span>{[board.iteration, board.goal, board.startDate && `Inicio: ${formatDate(board.startDate)}`, board.endDate && `Fin: ${formatDate(board.endDate)}`].filter(Boolean).join('  ·  ')}</span></div></div><BoardCanvas board={board} clean height={boardHeight(board.cards)} zoom={1}/><div className="export-legend">Prioridad: {Object.entries(priorities).map(([key, p]) => <span key={key}><i style={{ background: p.dot }}/>{p.label}</span>)}</div></div></div>
+          <div className="offscreen-export" aria-hidden="true" inert ref={exportRef}><BoardExport board={board}/></div>
         </>}
       </div>
     </main>

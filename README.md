@@ -12,7 +12,7 @@ Aplicación de uso personal con **Next.js 16 / App Router, React, TypeScript, Po
 - Edición con doble clic o con el botón de la tarjeta. Flechas del teclado para mover 5 píxeles; Mayús + flecha para mover 20; Enter para editar.
 - Guardado automático con una cola de escrituras y revisiones para detectar cambios concurrentes entre pestañas. Aviso al salir con cambios sin guardar y copia JSON de emergencia si falla el guardado.
 - Búsqueda, zoom y ajuste del tablero al ancho disponible.
-- Exportación del tablero completo a **PNG y PDF** con título, iteración, módulos, fechas de inicio y fin y leyenda de prioridad. La búsqueda y el zoom no afectan a la exportación. El PDF contiene una imagen en una página del tamaño del tablero, no texto vectorial ni páginas A4 recortadas.
+- Exportación del tablero completo a **PNG y PDF** con título, iteración, módulos, fechas de inicio y fin y prioridad visible en cada tarjeta. La exportación usa una distribución compacta para tesis: texto más grande y contrastado, columnas vacías estrechas y tarjetas ordenadas sin los huecos del lienzo. Las columnas con muchas tarjetas pueden usar varias tarjetas por fila para equilibrar el formato. Se conservan el contenido, las columnas y el orden vertical; las coordenadas guardadas no cambian. La búsqueda y el zoom no afectan a la exportación. El PDF contiene una imagen en una página del tamaño del tablero, no texto vectorial ni páginas A4 recortadas.
 
 ## Ejecutar
 
@@ -112,7 +112,7 @@ La prueba de integración crea un tablero temporal, comprueba creación, persist
 
 - Pensado para uso personal local, sin autenticación ni colaboración multiusuario. El servidor de los scripts `dev` y `start` escucha en loopback. Antes de publicarlo, añade autenticación y autorización por tablero.
 - Hasta 20 columnas y 300 tarjetas por tablero; hasta 300 caracteres para el nombre y 2000 para la descripción de cada tarjeta. El lienzo crece verticalmente hasta las tarjetas y permite posicionarlas hasta `y = 10000`.
-- PNG se genera a escala 2× en tableros habituales. En tableros muy grandes la escala se ajusta para no superar 32 megapíxeles. Un tablero ancho puede necesitar una página horizontal o una figura ampliada dentro de la tesis.
+- PNG se genera a escala 3× en tableros habituales; el PDF incorpora esa misma imagen de alta resolución. En tableros muy grandes la escala se ajusta para no superar 32 megapíxeles. Un tablero ancho puede necesitar una página horizontal o una figura ampliada dentro de la tesis.
 - Las tarjetas admiten superposición por diseño. Antes de exportar, distribúyelas para que el texto sea visible.
 - La interfaz usa DM Sans y Manrope de Google Fonts con fuentes de sistema como alternativa. La exportación usa Arial/Helvetica y no necesita descargar fuentes.
 - Los datos se guardan en PostgreSQL, no en localStorage. Si falla la conexión, los cambios pendientes permanecen en memoria de la pestaña: reintenta guardar o descarga la copia JSON antes de cerrar. La copia JSON es un respaldo; esta versión no incluye importación.
